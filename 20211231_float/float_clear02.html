@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;}
+        .clearfix:after{
+            content:"";display: block;clear: both;
+        }
+        li{list-style: none;}
+
+        /* css  */
+        div.box{background-color: #f00;}
+        div.box>div.left{float: left;}
+        div.box>div.right{float: right;}
+
+        ul.nav{background-color:skyblue;}
+        ul.nav>li{float: left;width:20%}
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+
+   <ul class="nav clearfix">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+   </ul>
+</body>
+</html>

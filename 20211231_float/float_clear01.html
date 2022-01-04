@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        *{margin: 0;padding: 0;}
+        .clearfix:after{
+            content:"";display:block;clear:both;
+        }
+
+
+
+
+        .box{background-color:skyblue}
+        .box>.left{float: left;}
+        .box>.right{float: right;}
+
+        .box>.clear{clear:both}
+
+        .box1:after{
+            content:"!!!"
+        }
+        .box1:before{
+            content:"한성용님 "
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="left">left</div>
+        <div class="right">right</div>
+
+        <!-- <div class="clear">clear</div> -->
+        <!-- display:block / clear:both -->
+    </div>
+   dddddddd
+
+
+   <div class="box1">
+       안녕하세요
+
+   </div>
+</body>
+</html>
