@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.box{
+            background-color: #0f0;
+            padding: 10px;
+        }
+        div.box > div.left{
+            background-color: #f00;
+            width:100px;
+            float:left
+        }
+        div.box>div.right{
+            background-color: #00f;
+            width: 100px;
+            float:right
+        }
+        div.box>div.clear{
+            background-color:pink;
+
+            clear:both
+            
+        }
+        .clearfix:after{content:"";display: block;clear:both}
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        
+    </div>
+
+    kdkdkdkdk
+</body>
+</html>
