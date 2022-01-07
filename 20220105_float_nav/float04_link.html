@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        .clearfix:after{content:"";display: block;clear: both;}
+        a:link,a:visited{color: #000;text-decoration: none;}
+
+        /* style  */
+        ul.nav{
+            width: 1000px;
+            margin: 0 auto; /* 가운데 정렬 */ 
+            _background-color: #ccc;
+        }
+        ul.nav>li{float: left;width: 20%;}
+        ul.nav>li>a{
+            display: block;
+            text-align: center;
+            /* height:40px; */
+            line-height: 100px;
+            background-color: pink;
+        }
+        ul.nav>li>a:hover{
+            background-color: darkblue;
+            color:white
+        }
+
+
+        ul.navli{width: 1000px;margin: 0 auto;}
+        ul.navli>li{
+            float: left;width: 20%;background-color:brown;
+        }
+        ul.navli>li:hover{background-color: darkblue;}
+        ul.navli>li:hover>a{color: white;font-weight:bold}
+        ul.navli>li>a{
+            display: block;text-align: center;line-height: 40px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul class="nav clearfix">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">커뮤니티</a></li>
+        <li><a href="#">온라인문의</a></li>
+        <li><a href="#">회사홍보</a></li>
+    </ul>
+
+
+    <ul class="navli clearfix">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">커뮤니티</a></li>
+        <li><a href="#">온라인문의</a></li>
+        <li><a href="#">회사홍보</a></li>
+    </ul>
+
+
+</body>
+</html>
