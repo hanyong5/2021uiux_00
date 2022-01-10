@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>himedia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;}
+        li{list-style: none;}
+        a:link,a:visited{color: #000;text-decoration: none;}
+        .clearfix:after{content:"";display: block;clear: both;}
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+        
+
+        /* header  start */
+        
+
+        /* util menu  */
+        .util_wrapper{
+            width: 980px;
+            margin: 0 auto;
+            
+        }
+        .util_wrapper>ul.util{float: right;}
+        .util_wrapper>ul.util>li{float: left;}
+        .util_wrapper>ul.util>li>a{display: block;font-size: 12px;padding: 6px 10px;}
+
+        .wall{
+            height: 1px;background: #c4c4c4;
+        }
+
+        /* logo  */
+        .logo_wrapper{
+            width: 980px;margin: 0 auto;;
+            padding: 23px;
+        }
+        .logo_wrapper>h1>a{display: block;text-align: center;font-size: 24px;line-height:28px;}
+
+
+        /* nav  */
+        .nav_wrapper{background-color: #1D5DA4;}
+        .nav_wrapper>.nav{width: 980px;margin: 0 auto;}
+        .nav_wrapper>.nav>li{float: left;width: 16.666%;}
+        .nav_wrapper>.nav>li>a{
+            display: block;text-align: center;line-height: 45px;color:white;
+            font-weight: bold;
+        }
+        .nav_wrapper>.nav>li>a:hover{background-color:#0d2b4d;}
+
+
+        /* header end  */
+
+    </style>
+</head>
+<body>
+    <!-- header start -->
+     <header>
+         <div class="util_wrapper clearfix">
+            <ul class="util clearfix">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
+         </div>
+         
+         <div class="wall"></div>
+         
+         <div class="logo_wrapper">
+             <h1 class="logo"><a href="#">하이미디어</a></h1>
+         </div>
+             
+             
+         <nav class="nav_wrapper"> <!-- backgroundcolor  -->
+            <ul class="nav clearfix"> <!-- w980 m0a  -->
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">제품소개</a></li>
+                <li><a href="#">사업영역</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">사회공헌</a></li>
+                <li><a href="#">인재채용</a></li>
+            </ul>
+        </nav>
+        
+     </header>
+
+     <!-- header end  -->
+  
+</body>
+</html>
