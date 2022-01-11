@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        a:link,a:visited{color: #000;text-decoration: none;}
+        .clearfix:after{content:"";display: block;clear: both;}
+        html,body{height: 100%;}
+
+
+        body{
+            background-image: url(../images/bg_grid.gif);
+            font-family: 'Nanum Gothic', sans-serif;
+            /* display: flex;
+            justify-content: center;
+            align-items:center; */
+
+        }
+        .box01{
+            
+            background-color: skyblue;
+            left:50%;top:50%;
+            margin-left: -50px;
+            margin-top: -50px;
+            position:absolute;
+            
+        }
+
+        .box{width: 100px;height: 100px;}
+
+        .box02{
+            background-color: pink;
+            width: 500px;
+            margin: 0 auto;
+            position: relative;         
+        }
+        .point{
+            width: 30px;height: 30px;background: #000;
+            position: absolute;right: -10px;bottom: 0;
+        }
+        
+        
+        
+        .box03{background-color:red;}
+    </style>
+</head>
+<body>
+    <div class="box box01">1111</div>
+
+    <div class="box box02">
+        <div class="point"></div>
+    </div>
+
+    <div class="box box03"></div>
+    
+</body>
+</html>
