@@ -1,0 +1,15 @@
+@charset 'utf-8';
+body{
+    background-image: url(../images/cardui_01.jpg);
+    background-repeat: no-repeat;
+}
+.card{
+    width: 300px;height: 400px;
+    background-color: #6592cf;
+    margin-top: 100px;border-radius: 10px;
+    overflow: hidden;
+}
+.card>img{display: block;margin-bottom: 5px;}
+.card_body{padding:10px 20px}
+.card_body>h3{font-size: 18px;line-height: 20px;margin-bottom: 10px;color:white}
+.card_body>p{font-size: 14px;line-height: 16px;color:white}

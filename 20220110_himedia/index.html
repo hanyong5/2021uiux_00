@@ -31,7 +31,18 @@
             
         }
         .util_wrapper>ul.util{float: right;}
-        .util_wrapper>ul.util>li{float: left;}
+        .util_wrapper>ul.util>li{float: left;position: relative;}
+       
+         .util_wrapper>ul.util>li:after{
+            content:"";
+            width: 1px;height: 11px;
+            display: block;background-color: #ccc;
+            position: absolute;top: 7px;
+        }
+        .util_wrapper>ul.util>li:first-child:after{
+            content:"";display: none;
+        }
+        
         .util_wrapper>ul.util>li>a{display: block;font-size: 12px;padding: 6px 10px;}
 
         .wall{
