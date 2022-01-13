@@ -14,6 +14,10 @@
         li{list-style: none;}
         a:link,a:visited{color: #000;text-decoration: none;}
         .clearfix:after{content:"";display: block;clear: both;}
+        img{display: block;}
+
+
+
         body{
             font-family: 'Roboto', sans-serif;
             min-width:980px
@@ -106,6 +110,41 @@
             position: absolute;
             right: 0;  /* overflow: hidden; 부모자 크기를 넘치면 잘라줌 */
         }
+
+
+        .bannerWrap{background-color: #eee;margin-bottom:50px;}
+         .banner{
+            width: 980px;margin: 0 auto;
+        }
+         .banner li{
+            float: left;width: 20%;height: 196px;
+            padding-top: 13px;
+        }
+        .banner img{margin: 0 auto;margin-bottom: 10px;}
+        .banner h3{font-size: 18px;text-align: center;margin-bottom: 5px;color: #fff;}
+        .banner p{font-size: 14px;text-align: center;color: #fff;}
+
+         .banner li:nth-child(1){background-color: #7C99B9;}
+         .banner li:nth-child(2){background-color: #4F74A1;}
+         .banner li:nth-child(3){background-color: #4B8CE0;}
+         .banner li:nth-child(4){background-color: #3DB5F2;}
+         .banner li:nth-child(5){background-color: #95C8FF;}
+
+
+         /* section one  */
+         
+         .section_one{width: 980px;margin: 0 auto}
+         .section_one li.card_one{
+             float: left;width: 310px;margin-right: 25px;
+         }
+         .section_one li:last-child{margin-right:0;}
+         .section_one .card_body{
+             padding: 16px 16px;
+             border: 1px solid #ccc;
+             border-top: 0;
+            }
+         .section_one h3{font-size: 18px;margin-bottom:5px;}
+         .section_one p{font-size: 14px;}
     </style>
 </head>
 <body>
@@ -141,6 +180,9 @@
      </header>
 
      <!-- header end  -->
+
+
+     <!-- visual start -->
      <div class="visual">
         <div class="slide">
             <img src="images/mainVisualText.png" alt="" class="img1">
@@ -148,10 +190,77 @@
         </div>
      </div>
 
+     <!-- visual end  -->
 
-     <!-- <div class="test" style="background-color: blue;height: 100px;">
+     <!-- banner start -->
+         <div class="bannerWrap">
+             <div class="banner"> <!-- w980px m0a -->
+                <ul class="clearfix">
+                    <li>
+                        <img src="images/icon01.png" alt="">
+                        <h3>사회공헌</h3>
+                        <p>소외된 이웃과 함께 합니다. </p>
+                    </li>
+                    <li>
+                        <img src="images/icon02.png" alt="">
+                        <h3>사회공헌</h3>
+                        <p>소외된 이웃과 함께 합니다. </p>
+                    </li>
+                    <li>
+                        <img src="images/icon03.png" alt="">
+                        <h3>사회공헌</h3>
+                        <p>소외된 이웃과 함께 합니다. </p>
+                    </li>
+                    <li>
+                        <img src="images/icon04.png" alt="">
+                        <h3>사회공헌</h3>
+                        <p>소외된 이웃과 함께 합니다. </p>
+                    </li>
+                    <li>
+                        <img src="images/icon05.png" alt="">
+                        <h3>사회공헌</h3>
+                        <p>소외된 이웃과 함께 합니다. </p>
+                    </li>
+                </ul>
+             </div>
+         </div>
 
-     </div> -->
+         <!-- banner end  -->
+
+         
+             <div class="section_one">  <!-- w980px m0a -->
+                 <ul class="clearfix">
+                     <li class="card_one">
+                        <img src="images/content_img01.png" alt="">
+                        <div class="card_body">
+                            <h3>회사개요</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, ipsum!</p>
+                        </div>
+                     </li>
+                     <li class="card_one">
+                        <img src="images/content_img02.png" alt="">
+                        <div class="card_body">
+                            <h3>회사개요</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, ipsum!</p>
+                        </div>
+                     </li>
+                     <li class="card_one">
+                        <img src="images/content_img03.png" alt="">
+                        <div class="card_body">
+                            <h3>회사개요</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, ipsum!</p>
+                        </div>
+                     </li>
+                 </ul>
+             </div>
+
+
+
+         <!-- <div style="background-color: red;height: 100px;"></div> -->
+    
+
+
+
   
 </body>
 </html>
