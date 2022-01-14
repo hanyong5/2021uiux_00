@@ -14,21 +14,41 @@
 
     <script>
         $(document).ready(function(){
-            $(".slider").bxSlider({
-                slideWidth:1200
-            });
+            
+            $(".slider").bxSlider();
+
+            $(".slider_two").bxSlider();
+            
+
+
         });
     </script>
     <style>
         body{background: #aaa;}
-        .sliderWrap{width: 1200px;margin: 0 auto}
+        .sliderWrap{width:1200px;margin: 0 auto}
+        .bx-wrapper {
+            -moz-box-shadow: 0 0 0 #fff;
+            -webkit-box-shadow: 0 0 0 #fff;
+            box-shadow: 0 0 0 #fff;
+            border: 0 none;
+            margin-bottom: 0;
+        }
+        .bx-wrapper .bx-pager{
+            bottom: 30px;
+        }
+        .container{
+            height: 200px;background: skyblue;
+        }
+
+        .slider_two .slist img{width: 100%;}
     </style>
 
 </head>
 <body>
     <!-- 1200x500  -->
     <div class="sliderWrap">
-        <ul class="slider clearfix">
+        
+        <ul class="slider">
             <li><img src="images/pc01.jpg" alt=""></li>
             <li><img src="images/pc02.jpg" alt=""></li>
             <li><img src="images/pc03.jpg" alt=""></li>
@@ -39,5 +59,13 @@
             <li><img src="images/pc03.jpg" alt=""></li>
         </ul>
     </div>
+
+
+    <ul class="slider_two">
+        <li class="slist"><img src="images/pc01.jpg" alt="" ></li>
+        <li class="slist"><img src="images/pc02.jpg" alt=""></li>
+        <li class="slist"><img src="images/pc03.jpg" alt=""></li>
+    </ul>
+    
 </body>
 </html>
