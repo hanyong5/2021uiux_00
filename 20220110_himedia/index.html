@@ -133,7 +133,7 @@
 
          /* section one  */
          
-         .section_one{width: 980px;margin: 0 auto}
+         .section_one{width: 980px;margin: 0 auto;margin-bottom: 25px;}
          .section_one li.card_one{
              float: left;width: 310px;margin-right: 25px;
          }
@@ -143,8 +143,26 @@
              border: 1px solid #ccc;
              border-top: 0;
             }
-         .section_one h3{font-size: 18px;margin-bottom:5px;}
-         .section_one p{font-size: 14px;}
+
+         .card_body h3{font-size: 18px;margin-bottom:5px;}
+         .card_body p{font-size: 14px;}
+         .card_body .btn{font-size: 14px;color:#6199E2;font-weight: bold;}
+
+         .section_two{width: 980px;margin: 0 auto}
+         .section_two li.card_two{
+             float: left;width: 310px;margin-right: 25px;
+             border: 1px solid #ccc;padding: 16px;
+             position: relative;overflow: hidden;
+         }
+         .section_two li:last-child{margin-right:0;}
+         .section_two .card_two img{
+             position: absolute;
+             right: -30px;
+             top: 14px;
+         }
+         .card_two .card_body{position: relative;}
+         .card_two .card_body h3,
+         .card_two .card_body p{margin-bottom: 15px;}
     </style>
 </head>
 <body>
@@ -253,6 +271,36 @@
                      </li>
                  </ul>
              </div>
+
+             <div class="section_two">  <!-- w980px m0a -->
+                <ul class="clearfix">
+                    <li class="card_two">
+                        <img src="images/content_icon01.png" alt="">
+                        <div class="card_body">
+                            <h3>사보</h3>
+                            <p>풍부한 경험과 최고의 <br>기술력으로 새로운 미래를<br>열어갑니다.</p>
+                            <div class="btn">자세히보기</div>
+                        </div>
+                    </li>
+                    <li class="card_two">
+                        <img src="images/content_icon02.png" alt="">
+                        <div class="card_body">
+                            <h3>찾아오시는 길</h3>
+                            <p>풍부한 경험과 최고의 <br>기술력으로 새로운 미래를<br>열어갑니다.</p>
+                            <div class="btn">자세히보기</div>
+                        </div>
+                     </li>
+                     <li class="card_two">
+                        <img src="images/content_icon03.png" alt="">
+                        <div class="card_body">
+                            <h3>제품정보</h3>
+                            <p>풍부한 경험과 최고의 <br>기술력으로 새로운 미래를<br>열어갑니다.</p>
+                            <div class="btn">자세히보기</div>
+                        </div>
+                     </li>
+                    
+                </ul>
+            </div>
 
 
 
