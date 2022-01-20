@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .container{width: 1000px;margin: 0 auto}
+        .container h3:after{content:"";display: block;width: 200px;height: 2px;background: #000;margin: 10px auto}
+        .container ul li{float: left;width:calc( (1000px - 45px) / 4);margin-right: 15px;}
+        .container ul li:last-child{margin-right:0;}
+        .container img{width: 100%;display: block;}
+
+
+
+
+
+        .t-center{text-align: center !important;}
+        .mb0{margin-bottom: 0 !important;}
+        .mb1{margin-bottom: 0.25rem !important;}
+        .mb2{margin-bottom: 0.5rem !important;}
+        .mb3{margin-bottom: 1rem !important;}
+        .mb4{margin-bottom: 2rem !important;}
+        .mb5{margin-bottom: 3rem !important;}
+
+        .color1{background-color: skyblue;}
+
+        .pt20{padding-top: 20px !important;}
+        .pb20{padding-bottom: 20px !important;}
+
+    </style>
+</head>
+<body>
+    <div class="color1 pt20 pb20">
+        <div class="container">
+            <h3 class="t-center">GALLERY</h3>
+            <p class="t-center mb4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, sed.</p>
+            <ul class="clearfix">
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li><img src="../images/testimg.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+</html>
