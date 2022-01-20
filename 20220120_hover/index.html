@@ -9,14 +9,31 @@
     <style>
         .container{width: 1000px;margin: 0 auto}
         .container h3:after{content:"";display: block;width: 200px;height: 2px;background: #000;margin: 10px auto}
-        .container ul li{float: left;width:calc( (1000px - 45px) / 4);margin-right: 15px;}
+        .container ul li{
+            float: left;width:calc( (1000px - 45px) / 4);margin-right: 15px;
+            position: relative;overflow: hidden;
+        }
         .container ul li:last-child{margin-right:0;}
         .container img{width: 100%;display: block;}
 
+        .container ul li .view{
+            /* display: none; */
+            position: absolute;top:0;
+            width: 100%;height: 100%;
+            background-color: rgba(255,0,0,0.3);
+            /* opacity:0; */
+            transition: 0.5s;
+            top: 100%;
+        }
+
+        /* .container ul li:hover .view{display: block;} */
+        /* .container ul li:hover .view{opacity:1} */
+        .container ul li:hover .view{top:0}
 
 
 
 
+        /* common  */
         .t-center{text-align: center !important;}
         .mb0{margin-bottom: 0 !important;}
         .mb1{margin-bottom: 0.25rem !important;}
@@ -38,10 +55,28 @@
             <h3 class="t-center">GALLERY</h3>
             <p class="t-center mb4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, sed.</p>
             <ul class="clearfix">
-                <li><img src="../images/testimg.jpg" alt=""></li>
-                <li><img src="../images/testimg.jpg" alt=""></li>
-                <li><img src="../images/testimg.jpg" alt=""></li>
-                <li><img src="../images/testimg.jpg" alt=""></li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="view">
+                        test
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/testimg.jpg" alt="">
+                    <div class="view">
+                        test
+                    </div>
+                </li>
+                <li><img src="../images/testimg.jpg" alt="">
+                    <div class="view">
+                        test
+                    </div>
+                </li>
+                <li><img src="../images/testimg.jpg" alt="">
+                    <div class="view">
+                        test
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
