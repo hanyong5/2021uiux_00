@@ -15,50 +15,120 @@
             border: 0;
             margin-bottom: 0;
         }
-        .bx-wrapper .bx-pager{bottom: 30px;}
-        .bx-wrapper .bx-pager.bx-default-pager a{
+        .sliderWrap .bx-wrapper .bx-pager{bottom: 30px;}
+        .sliderWrap1 .bx-wrapper .bx-pager{
+            background: pink;bottom:400px;right: 0;
+            width: 250px;
+        }
+        
+        .sliderWrap .bx-wrapper .bx-pager.bx-default-pager a{
             background-color:pink;
             width:50px;height: 20px;
             border-radius:10px;transition:0.3s
         }
-        .bx-wrapper .bx-pager.bx-default-pager a.active{
+        .sliderWrap .bx-wrapper .bx-pager.bx-default-pager a.active{
             background-color: red;
 
             width: 20px;height: 20px;
         }
-        .bx-wrapper .bx-pager.bx-default-pager a:hover{}
-        .sliderWrap{width: 900px;height: 450px;position: relative;}
+        .sliderWrap .bx-wrapper .bx-pager.bx-default-pager a:hover{}
+
+
+        .sliderWrap1 .bx-wrapper .bx-pager.bx-default-pager a{
+            background-color:blue;
+            width:20px;height: 20px;
+            border-radius:10px;transition:0.3s
+        }
+        .sliderWrap1 .bx-wrapper .bx-pager.bx-default-pager a.active{
+            background-color: black;
+
+            width: 20px;height: 20px;
+        }
+        .sliderWrap1 .bx-wrapper .bx-pager.bx-default-pager a:hover{}
+
+        .sliderWrap,.sliderWrap1{width: 900px;height: 450px;position: relative;}
         
-        .nextBtn,.preBtn{
+        .nextBtn,.preBtn,.nextBtn1,.preBtn1{
             position: absolute;top:50%;margin-top: -35px;
             cursor: pointer;
         }
 
-        .nextBtn{right: 0;}
+        .nextBtn,.nextBtn1{right: 0;}
+        .txt{position: absolute;top: 30px;left: 30px;}
+        .txt1{position: absolute;top: 30px;right: 30px;}
     </style>
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery.bxslider.js"></script>
     <script>
         $(document).ready(function(){
-            $(".slider").bxSlider({
+            //slide
+            var slide = $(".slider").bxSlider({
                 mode:'vertical',
                 auto:true,
                 controls:false
+            });
+
+            $(".nextBtn").click(function(){
+                slide.goToNextSlide();
             })
-        });
+            $(".preBtn").click(function(){
+                slide.goToPrevSlide();
+            })
+            
+
+            // slide1
+            var slide1 = $(".slider1").bxSlider({
+                auto:true,
+                controls:false
+            });
+
+            $(".nextBtn1").click(function(){
+                slide1.goToNextSlide();
+            })
+            $(".preBtn1").click(function(){
+                slide1.goToPrevSlide();
+            })
+
+        });  // ready 
+        
+       
     </script>
 </head>
 <body>
     <div class="sliderWrap">
         <ul class="slider">
-            <li><a href="#"><img src="images/slideImg01.png" alt=""></a></li>
-            <li><a href="#"><img src="images/slideImg02.png" alt=""></a></li>
+            <li><a href="#">
+                <img src="images/slideImg01.png" alt="">
+                <div class="txt">
+                    <h3>lorem</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            
+            </a></li>
+            <li><a href="#"><img src="images/slideImg02.png" alt="">
+                <div class="txt1">
+                    <h3>lorem</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </a></li>
             <li><a href="#"><img src="images/slideImg01.png" alt=""></a></li>
             <li><a href="#"><img src="images/slideImg02.png" alt=""></a></li>
         </ul>
         <div class="nextBtn"><img src="images/arrow02.png" alt=""></div>
         <div class="preBtn"><img src="images/arrow01.png" alt=""></div>
+    </div>
+
+
+    <div class="sliderWrap1">
+        <ul class="slider1">
+            <li><a href="#"><img src="images/slideImg01.png" alt=""></a></li>
+            <li><a href="#"><img src="images/slideImg02.png" alt=""></a></li>
+            <li><a href="#"><img src="images/slideImg01.png" alt=""></a></li>
+            <li><a href="#"><img src="images/slideImg02.png" alt=""></a></li>
+        </ul>
+        <div class="nextBtn1"><img src="images/arrow02.png" alt=""></div>
+        <div class="preBtn1"><img src="images/arrow01.png" alt=""></div>
     </div>
 </body>
 </html>
