@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .nav{width: 980px;margin: 0 auto}
+        .nav li{
+            float: left;width: 140px;height: 50px;background: rgb(77, 72, 72);
+            background-image: url(../images/sprites.png);
+            overflow: hidden;transition:0.3s
+        }
+        .nav li:hover{background-position: 0 -50px;}
+
+        .nav li:nth-child(2){background-position: -140px 0;}
+        .nav li:nth-child(2):hover{background-position: -140px -50px;}
+
+        .nav li:nth-child(3){background-position: -280px 0;}
+        .nav li:nth-child(3):hover{background-position: -280px -50px;}
+
+        .nav li:nth-child(4){background-position: -420px 0;}
+        .nav li:nth-child(4):hover{background-position: -420px -50px;}
+
+        .nav li:nth-child(5){background-position: -560px 0;}
+        .nav li:nth-child(5):hover{background-position: -560px -50px;}
+
+        .nav li:nth-child(6){background-position: -700px 0;}
+        .nav li:nth-child(6):hover{background-position: -700px -50px;}
+
+        .nav li:nth-child(7){background-position: -840px 0;}
+        .nav li:nth-child(7):hover{background-position: -840px -50px;}
+
+
+        .nav li a{display: block;line-height: 50px; text-indent:-1000px;}
+
+
+        h1{
+            margin: 0 auto;margin-bottom:20px;
+            width: 440px;height: 107px;
+            background-image: url(../images/sprite_naver.png);
+            background-position: 0 -320px;
+            background-repeat: no-repeat;
+
+        }
+        h1 a{display: block;line-height: 107px;;text-indent: -1000px;}
+        .wrap{background: #000;}
+    </style>
+</head>
+<body>
+    <h1><a href="#">네이버</a></h1>
+    <div class="wrap">
+        <div class="nav">
+            <ul class="clearfix">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+                <li><a href="#">menu6</a></li>
+                <li><a href="#">menu7</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
