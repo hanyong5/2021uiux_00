@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+        $(document).ready(function(){
+            var myslider = $(".slider").bxSlider({
+                pager:false,
+                controls:false,
+                // mode:"vertical"
+            });
+
+            $(".nextBtn").click(function(){
+                myslider.goToNextSlide();
+            })
+            $(".prevBtn").click(function(){
+                myslider.goToPrevSlide();
+            })
+        });
+    </script>
+    <style>
+        body{background: gray;}
+        .sliderWrap{width: 1260px;margin: 0 auto;background: skyblue;position: relative;}
+        .bx-wrapper {
+            -moz-box-shadow: 0 0 0 transparent;
+            -webkit-box-shadow: 0 0 0 transparent;
+            box-shadow: 0 0 0 transparent;
+            border: 0 none;
+            margin-bottom: 0;
+        }
+        .nextBtn,.prevBtn{position: absolute;top:50%;transform: translateY(-50%);cursor: pointer;}
+        .nextBtn{right: 10px;}
+        .prevBtn{left: 10px;}
+
+        .sliderWrap .card{position: absolute;top: 100px;right: 100px;}
+        .sliderWrap .card h2{
+            font-size: 2em;color:white;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .sliderWrap .card h2:after{
+            content:"";display: block;width: 100px;height: 2px;background: #f00;
+            position: absolute;top:-10px;
+        }
+        .sliderWrap .card p{margin-bottom: 10px;}
+        /* .sliderWrap .card a.btn{display: block;} */
+
+
+        a.btn{padding: 10px 20px;background: pink;display: inline-block;border-radius:10px;font-size: 14px;font-weight: bold;color:white}
+        a.btn.primary{background: orange !important;}
+        a.btn.pink{background: pink !important;}
+
+        a.btn.primary:hover{background: blue !important;}
+        a.btn.pink:hover{background: blue !important;}
+
+        
+    </style>
+</head>
+<body>
+    <div class="sliderWrap">
+        <ul class="slider">
+            <li>
+                <img src="images/main_slider01.jpg" alt="">
+                <div class="card">
+                    <h2>사랑과 행복을 나누는 마음</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>Harum, blanditiis?</p>
+                    <a href="#" class="btn primary">바로가기</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/main_slider01.jpg" alt="">
+                <div class="card">
+                    <h2>사랑과 행복을 나누는 마음</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, blanditiis?</p>
+                    <a href="#" class="btn pink">바로가기</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/main_slider01.jpg" alt="">
+                <div class="card">
+                    <h2>사랑과 행복을 나누는 마음</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, blanditiis?</p>
+                    <a href="#" class="btn primary">바로가기</a>
+                </div>
+            </li>
+        </ul>
+        <div class="nextBtn">
+            <img src="images/btn_right.png" alt="">
+        </div>
+        <div class="prevBtn">
+            <img src="images/btn_left.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
