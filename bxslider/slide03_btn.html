@@ -16,8 +16,8 @@
                 // pager:false,
                 controls:false,
                 pagerCustom:".boxPager",
-                auto:true
-                // mode:"vertical"
+                auto:true,
+                mode:"vertical"
             });
 
             $(".nextBtn").click(function(){
@@ -63,8 +63,8 @@
         a.btn.primary:hover{background: blue !important;}
         a.btn.pink:hover{background: blue !important;}
 
-        .sliderPager{position: absolute;bottom: 0;background: pink;width: 100%;}
-        .sliderPager .boxPager a{display: block;float: left;width: 25%;height: 40px;line-height: 40px;text-align: center;}
+        .sliderPager{position: absolute;top: 0;background: pink;width: 200px;}
+        .sliderPager .boxPager a{display: block;height:calc( 740px / 4 );display: flex;align-items: center;justify-content: center;}
         .sliderPager .boxPager a:hover{background: red;color:white;font-weight: bold;}
         .sliderPager .boxPager a.active{background: orange;}
     </style>
