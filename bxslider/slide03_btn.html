@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +13,10 @@
     <script>
         $(document).ready(function(){
             var myslider = $(".slider").bxSlider({
-                pager:false,
+                // pager:false,
                 controls:false,
+                pagerCustom:".boxPager",
+                auto:true
                 // mode:"vertical"
             });
 
@@ -40,7 +42,7 @@
         .nextBtn{right: 10px;}
         .prevBtn{left: 10px;}
 
-        .sliderWrap .card{position: absolute;top: 100px;right: 100px;}
+        .sliderWrap .card{position: absolute;top: 100px;right: 100px;width: 410px;}
         .sliderWrap .card h2{
             font-size: 2em;color:white;
             position: relative;
@@ -50,7 +52,7 @@
             content:"";display: block;width: 100px;height: 2px;background: #f00;
             position: absolute;top:-10px;
         }
-        .sliderWrap .card p{margin-bottom: 10px;}
+        .sliderWrap .card p{margin-bottom: 30px;}
         /* .sliderWrap .card a.btn{display: block;} */
 
 
@@ -61,7 +63,10 @@
         a.btn.primary:hover{background: blue !important;}
         a.btn.pink:hover{background: blue !important;}
 
-        
+        .sliderPager{position: absolute;bottom: 0;background: pink;width: 100%;}
+        .sliderPager .boxPager a{display: block;float: left;width: 25%;height: 40px;line-height: 40px;text-align: center;}
+        .sliderPager .boxPager a:hover{background: red;color:white;font-weight: bold;}
+        .sliderPager .boxPager a.active{background: orange;}
     </style>
 </head>
 <body>
@@ -70,15 +75,16 @@
             <li>
                 <img src="images/main_slider01.jpg" alt="">
                 <div class="card">
-                    <h2>사랑과 행복을 나누는 마음</h2>
+                    <h2>사랑과 행복을 나누는 마음1</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br>Harum, blanditiis?</p>
                     <a href="#" class="btn primary">바로가기</a>
+                    
                 </div>
             </li>
             <li>
                 <img src="images/main_slider01.jpg" alt="">
                 <div class="card">
-                    <h2>사랑과 행복을 나누는 마음</h2>
+                    <h2>사랑과 행복을 나누는 마음2</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, blanditiis?</p>
                     <a href="#" class="btn pink">바로가기</a>
                 </div>
@@ -86,7 +92,15 @@
             <li>
                 <img src="images/main_slider01.jpg" alt="">
                 <div class="card">
-                    <h2>사랑과 행복을 나누는 마음</h2>
+                    <h2>사랑과 행복을 나누는 마음3</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, blanditiis?</p>
+                    <a href="#" class="btn primary">바로가기</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/main_slider01.jpg" alt="">
+                <div class="card">
+                    <h2>사랑과 행복을 나누는 마음4</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, blanditiis?</p>
                     <a href="#" class="btn primary">바로가기</a>
                 </div>
@@ -98,6 +112,16 @@
         <div class="prevBtn">
             <img src="images/btn_left.png" alt="">
         </div>
+        <div class="sliderPager">
+           <div class="boxPager">
+               <a href="#" data-slide-index="0">menu1</a>
+               <a href="#" data-slide-index="1">menu2</a>
+               <a href="#" data-slide-index="2">menu3</a>
+               <a href="#" data-slide-index="3">menu4</a>
+           </div> 
+        </div>
     </div>
+
+
 </body>
 </html>
