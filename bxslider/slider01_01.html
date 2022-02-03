@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/style1.css">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+        $(document).ready(function(){
+           var myslide = $(".slide").bxSlider({controls:false});
+           
+           $(".nextBtn").click(function(){
+               myslide.goToNextSlide();
+           });
+           $(".prevBtn").click(function(){
+               myslide.goToPrevSlide();
+           });
+
+           
+        });
+    </script>
+
+    
+</head>
+<body>
+    <!-- .wrap > .slide > li > h3 xxxx -->
+    <div class="wrap">
+        <ul class="slide">
+            <li class="conWrap">
+                <img src="images/pc01.jpg" alt="">
+                <h3 class="txt">1 Lorem ipsum dolor sit amet.</h3>
+            </li>
+            <li class="conWrap">
+                <img src="images/pc02.jpg" alt="">
+                <h3 class="txt">2 Lorem ipsum dolor sit amet.</h3>
+            </li>
+            <li class="conWrap">
+                <img src="images/pc03.jpg" alt="">
+                <h3 class="txt">3 Lorem ipsum dolor sit amet.</h3>
+            </li>
+        </ul>
+        <div class="nextBtn">
+            <img src="images/btn_right.png" alt="">
+        </div>
+        <div class="prevBtn">
+            <img src="images/btn_left.png" alt="">
+        </div>
+
+    </div>
+
+
+</body>
+</html>
