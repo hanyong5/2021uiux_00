@@ -10,10 +10,12 @@
         img{display: block;}
 
 
+        @media screen and (min-width:721px){
+            body{
+                font-family: 'Roboto', sans-serif;
+                min-width:980px;
+            }
 
-        body{
-            font-family: 'Roboto', sans-serif;
-            min-width:980px
         }
         
 
@@ -24,8 +26,8 @@
         .util_wrapper{
             width: 980px;
             margin: 0 auto;
-            
-            
+            /* min-width: 980px */
+         
         }
         .util_wrapper>ul.util{float: right;}
         .util_wrapper>ul.util>li{float: left;position: relative;}
@@ -82,7 +84,7 @@
         /* header end  */
         .visual{
             background-color: #213C6B;
-            background-image: url(images/main_bg01.jpg);
+            background-image: url(../images/main_bg01.jpg);
             background-repeat: no-repeat;
             background-position: center;
             height:400px

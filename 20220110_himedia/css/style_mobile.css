@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+@media screen and (max-width:720px){
+    body{
+        font-family: 'Roboto', sans-serif;
+        max-width: 720px;
+    }
+    .util_wrapper{display: none;}
+    .wall{display: none;}
+    .nav_wrapper{display: none;}
+    .logo_wrapper{
+        background: skyblue;
+        width: 100%;
+    }
+}
+
+
