@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* mobile start */
 @media screen and (max-width:720px){
     body{
         font-family: 'Roboto', sans-serif;
@@ -11,7 +12,47 @@
     .logo_wrapper{
         background: skyblue;
         width: 100%;
+        padding:16px;
+        position: relative;
     }
-}
+    .logo_wrapper h1{width: 150px;text-align-last: left;}
+    .logo_wrapper .toggle{
+        width: 35px;height: 35px;
+        border: 1px solid #000;
+        position: absolute;right: 16px;top: 12px;
+        cursor: pointer;
+    }
+
+    /* .logo_wrapper .toggle div{
+        width: 24px;height: 2px;background: #333;
+        border-radius: 1px;
+        position: absolute;
+        left:50%;top:50%;
+        margin-left: -12px;
+        margin-top: -1px;
+    } */
+
+    /* .logo_wrapper .toggle .bar1{transform:translate(-50%,-8px)}
+    .logo_wrapper .toggle .bar2{}
+    .logo_wrapper .toggle .bar3{transform:translate(-50%,6px)} */
+
+    /* .logo_wrapper .toggle .bar1{transform:translateY(-8px)}
+    .logo_wrapper .toggle .bar3{transform: translateY(8px);} */
+
+
+    /* toggle flex  */
+    .logo_wrapper .toggle{
+        display: flex;align-items: center;justify-content: center;
+    }
+    .logo_wrapper .toggle div{
+        width: 24px;height: 2px;background: #f00;
+        border-radius: 1px;
+        position: absolute;
+    }
+    .logo_wrapper .toggle .bar1{transform: translateY(-7px);}
+    .logo_wrapper .toggle .bar3{transform:translateY(7px)}
+
+    
+} /* mobile end */
 
 
