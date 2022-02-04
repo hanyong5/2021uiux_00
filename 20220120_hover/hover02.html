@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/instagram.min.css">
+    <style>
+        .wrap h2{text-align: center;margin-bottom: 10px;}
+        .wrap p{text-align: center;margin-bottom: 10px;}
+        .wrap{width: 1200px;margin: 0 auto;}
+        .wrap ul{display: flex;justify-content: space-between;}
+        .wrap li{
+            width:calc( (100% - 45px) / 4 );overflow: hidden;position: relative;background: skyblue;
+            border-radius: 10px;cursor: pointer;
+        }
+
+        .wrap li img{width: 100%;display: block;transition: 0.3s;}
+        .wrap li:hover img{transform:scale(1.1) translate(-10px,-10px) rotate(10deg);}
+
+        .wrap li .filter{
+            width: 100%;height: 100%;background: rgba(0,0,255,0.5);
+            position: absolute;top:0;transition: 0.3s;
+            display: flex;justify-content: center;align-items: center;
+            color:white;font-size: 2rem;
+        }
+        .wrap li:hover .filter{opacity:0}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2>gallery</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, perspiciatis!</p>
+        <ul>
+            <li>
+                <img src="../images/instagram.jpg" alt="">
+                <div class="filter">
+                    instargram
+                </div>
+            </li>
+            <li>
+                <img src="../images/instagram.jpg" alt="">
+                <div class="filter">
+                    instargram
+                </div>
+            
+            </li>
+            <li>
+                <img src="../images/instagram.jpg" alt="">
+                <div class="filter">
+                    instargram
+                </div>
+            
+            </li>
+            <li>
+                <div class="filter-inkwell">
+                    <img src="../images/testimg.jpg" alt="">
+                </div>
+                <div class="filter">
+                    instargram
+                </div>
+          
+            </li>
+            
+        </ul>
+    </div>
+</body>
+</html>

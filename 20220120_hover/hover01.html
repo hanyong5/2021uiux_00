@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/instagram.min.css">
+    <style>
+        .wrap{width: 1000px;margin: 0 auto;}
+        .wrap ul{display: flex;justify-content: space-between;}
+        .wrap li{width: calc( ( 100% - 30px) / 4 );overflow: hidden;cursor: pointer;position: relative;border-radius: 10px;}
+        .wrap li:hover img{transform: scale(1.2) rotate(10deg);}
+        .wrap img{width: 100%;display: block;transition:0.3s}
+
+        .wrap li .blind{
+            width: 100%;height: 100%;background: rgba(0,0,255,0.3);
+            position: absolute;top: 0;left: 0;
+            transition: 0.3s;
+        }
+        .wrap li:hover .blind{opacity:0}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li class="filter-1977">
+                <img src="../images/instagram.jpg" alt="">
+            </li>
+            <li class="filter-willow"><img src="../images/instagram.jpg" alt=""></li>
+            <li class="filter-moon"><img src="../images/instagram.jpg" alt=""></li>
+            <li class="filter-inkwell"><img src="../images/instagram.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>
