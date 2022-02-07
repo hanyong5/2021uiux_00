@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/colorbox.css">
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
+    <style>
+        .wrap{width: 1000px;margin: 0 auto;}
+        .wrap img{
+            display: block;
+            max-width: 100%;
+        }
+        .wrap ul{display: flex;justify-content: space-between;}
+        .wrap ul li{width: calc( ( 100% - 45px ) / 4 );} 
+        
+    </style>
+    <script>
+        // $(document).ready(function(){    });
+        // $(".wrap a").~    $(".modal").~
+
+        $(document).ready(function(){
+            $(".modal").colorbox({rel:"modal"});
+            $(".youtube").colorbox({
+                iframe:true,
+                innerWidth:1000,
+                innerHeight:562.5
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="../images/img1.jpg" class="modal" title="앵무새"><img src="../images/img1.jpg" alt=""></a></li>
+            <li><a href="../images/img2.jpg" class="modal" title="장미"><img src="../images/img2.jpg" alt=""></a></li>
+            <li><a href="../images/img3.jpg" class="modal" title="거위"><img src="../images/img3.jpg" alt=""></a></li>
+            <li><a href="https://www.youtube.com/embed/61SgDuK5WRg" class="youtube"><img src="../images/img4.jpg" alt=""></a></li>
+            
+        </ul>
+    </div>
+    
+
+
+    
+
+
+</body>
+</html>
