@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="wrap">
@@ -21,16 +27,21 @@
                         <input type="text" id="user-id" name="id" placeholder="아이디입력" class="inp-field">
                         <span class="icon email">@naver.com</span>
                     </p>
+                    <p class="field">
+                        <label for="user-pass" class="blind">비밀번호</label>
+                        <input type="text" id="user-pass" name="pass1" placeholder="비밀번호입력" class="inp-field">
+                        <span class="icon pass1">비밀번호</span>
+                    </p>
                 </fieldset>
                 
                 <!-- personal -->
                 <fieldset>
-                    <legend>개인정보</legend>
+                    <legend class="blind">개인정보</legend>
                 </fieldset>
                 
                 <!-- tell -->
                 <fieldset>
-                    <legend>전화인증</legend>
+                    <legend class="blind">전화인증</legend>
                 </fieldset>
                 <input type="submit" value="회원가입">
             </form>

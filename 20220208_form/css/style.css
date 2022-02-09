@@ -1,1 +1,40 @@
 @charset "utf-8";
+
+/* common  */
+body{font-family: 'Nanum Gothic', sans-serif;background: #eee;}
+.blind{position: absolute;left: 0;top: -9999px;}
+fieldset{
+    border: 1px solid #dadada;background: #fff;margin-bottom: 10px;
+}
+
+/* header  */
+.wrap{width: 460px;margin: 0 auto}
+
+#header{padding: 60px 0;}
+#header h1{
+    width: 240px;height: 44px;
+    margin: 0 auto;
+    background-image: url(../images/pc_sp_join.png);
+    background-repeat: no-repeat;
+    background-position: 0 -106px;
+}
+#header h1 a{display: block;line-height: 44px;text-indent:-9999px}
+
+
+/* content */
+#content .field{position: relative;}
+#content .field .inp-field{
+    width: 350px;height: 49px;
+    border:0 none;font-size: 16px;text-indent: 14px;
+}
+
+#content .field .icon{
+    display: block;width: 97px;height: 48px;
+    position: absolute;right: 10px;top: 0;
+    background-image: url(../images/ico_join3.png);
+    background-repeat: no-repeat;
+    
+    text-indent: -9999px;
+}
+#content .field .icon.email{background-position: 0 -47px;}
+#content .field .icon.pass1{background-position: 0 -466px;}
