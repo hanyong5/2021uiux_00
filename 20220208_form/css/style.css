@@ -22,7 +22,11 @@ fieldset{
 
 
 /* content */
-#content .field{position: relative;}
+#content .field{
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+}
+#content .field:last-child{border-bottom: 0 none;}
 #content .field .inp-field{
     width: 350px;height: 49px;
     border:0 none;font-size: 16px;text-indent: 14px;
@@ -38,3 +42,9 @@ fieldset{
 }
 #content .field .icon.email{background-position: 0 -47px;}
 #content .field .icon.pass1{background-position: 0 -466px;}
+#content .field .icon.pass2{background-position: 0 -515px;}
+
+
+
+/* common  */
+.w458{width: 458px !important;}
