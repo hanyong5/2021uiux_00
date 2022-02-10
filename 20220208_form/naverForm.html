@@ -52,11 +52,51 @@
                         <label for="user-man" class="btn-label male">남자</label>
                         <label for="user-woman" class="btn-label female">여자</label>
                     </p>
+                    <p class="field birth">
+                        <label for="user-birth">생일</label>
+                        <input type="text" id="user-birth" name="user-birth" placeholder="년도(4자)" class="inp-field w130">
+                        <span class="field-wall">|</span>
+                        <select name="month">
+                            <!-- option[value="$"]*12>{$월} -->
+                            <option value="1">1월</option>
+                            <option value="2">2월</option>
+                            <option value="3">3월</option>
+                            <option value="4">4월</option>
+                            <option value="5">5월</option>
+                            <option value="6">6월</option>
+                            <option value="7">7월</option>
+                            <option value="8">8월</option>
+                            <option value="9">9월</option>
+                            <option value="10">10월</option>
+                            <option value="11">11월</option>
+                            <option value="12">12월</option>
+                        </select>
+                        <span class="field-wall">|</span>
+                        <input type="text" name="day" placeholder="일" class="inp-field w145">
+                    </p>
+                    <p class="field">
+                        <label for="user-cemail" class="blind">본인확인메일</label>
+                        <input type="text" name="user-cemail" id="user-cemail" placeholder="본인확인 이메일" class="inp-field w458">
+                    </p>
                 </fieldset>
                 
                 <!-- tell -->
                 <fieldset>
                     <legend class="blind">전화인증</legend>
+                    <p class="field confirm">
+                        <label for="user-num" class="blind">인증번호받기</label>
+                        <select name="user-num" id="user-num">
+                            <option value="+082">+082</option>
+                        </select>
+                        <label for="user-ctell" class="blind">휴대전화번호</label>
+                        <input type="text" name="user-ctell" id="user-ctell" placeholder="휴대전화번호" class="inp-field w200">
+                        <button type="button" class="btn-click">인증</button>
+                    </p>
+                    <p class="field confirm">
+                        <label for="user-confirm" class="blind">인증번호</label>
+                        <input type="text" id="user-confirm" name="user-confirm" placeholder="인증번호" class="inp-field w300">
+                        <button type="button" class="btn-click">확인</button>
+                    </p>
                 </fieldset>
                 <input type="submit" value="회원가입">
             </form>

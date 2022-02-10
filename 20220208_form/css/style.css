@@ -25,6 +25,7 @@ fieldset{
 #content .field{
     position: relative;
     border-bottom: 1px solid #f0f0f0;
+    height: 50px;
 }
 #content .field:last-child{border-bottom: 0 none;}
 #content .field .inp-field{
@@ -63,6 +64,39 @@ p.radio>input:nth-child(2):checked ~ label.female{background: #eee !important;}
 #content .field .btn-label.male{left: 15px;}
 #content .field .btn-label.female{right: 15px;}
 
+#content .field.birth
+{
+    display: flex;justify-content: space-between;align-items: center;
+}
+
+#content .field.birth label{
+    display: flex;width: 53px;height:100%;
+    justify-content: center;align-items: center;
+
+}
+
+#content .field.birth select,
+#content .field.confirm select
+{
+    width: 110px;height: 29px;
+    text-indent: 10px;font-size: 15px;
+    border: 0 none;
+}
+
+#content .field.birth .field-wall{
+    display: block; width: 2px;width: 0;height: 29px;border-right: 1px solid #cdcdcd;
+    text-indent:-9999px;
+}
+
+#content .field.confirm .btn-click{
+    width: 99px;height: 31px;background: #fff;
+    border: 1px solid #dcdcdc;position: absolute;right: 10px;top: 10px;
+    cursor: pointer;
+}
 
 /* common  */
 .w458{width: 458px !important;}
+.w300{width: 300px !important;}
+.w200{width: 200px !important;}
+.w145{width: 145px !important;}
+.w130{width: 130px !important;}
