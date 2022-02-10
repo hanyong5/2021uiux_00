@@ -44,6 +44,24 @@ fieldset{
 #content .field .icon.pass1{background-position: 0 -466px;}
 #content .field .icon.pass2{background-position: 0 -515px;}
 
+#content .field.radio{height: 50px;}
+
+p.radio>input:nth-child(1):checked ~ label.male {background:#eee  !important}
+p.radio>input:nth-child(2):checked ~ label.female{background: #eee !important;}
+
+
+#content .field.radio input{position: relative;left: 20px;top: 20px;}
+
+#content .field .btn-label{
+    width: 212px;height: 31px;
+    position: absolute;top: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    display: flex;justify-content: center;align-items: center;
+    background: white;cursor:pointer
+}
+#content .field .btn-label.male{left: 15px;}
+#content .field .btn-label.female{right: 15px;}
 
 
 /* common  */
