@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var math = 10; //전역
+        var kor = 20;
+        var music = 30;
+        var total = math * ( kor + music );
+       //document.write("점수합계는 " + total);
+        //console.log(total);
+        //alert(total)
+
+        function print(dan){
+             //let dan = 6;
+             document.write(dan + "단 입니다.<br>");
+             document.write(dan + " * 1 =" + dan*1 + "<br>");
+             document.write(dan + " * 2 =" + dan*2 + "<br>");
+             document.write(dan + " * 3 =" + dan*3 + "<br>");
+             document.write(dan + " * 4 =" + dan*4 + "<br>");
+             document.write(dan + " * 5 =" + dan*5 + "<br>");
+             document.write(dan + " * 6 =" + dan*6 + "<br>");
+             document.write(dan + " * 7 =" + dan*7 + "<br>");
+             document.write(dan + " * 8 =" + dan*8 + "<br>");
+             document.write(dan + " * 9 =" + dan*9 + "<br>");
+        }
+
+        
+        print(1); //call 호출
+    </script>
+    <!-- <button type="button" onclick="print()">클릭</button> -->
+
+    <div style="background-color: skyblue;">
+        <script>
+            print(7);
+        </script>
+    </div>
+    <div style="background-color: pink;">
+        <script>
+            print(6);
+        </script>
+    </div>
+    <div style="background-color: blue;">
+        <script>
+            print(5);
+        </script>
+    </div>
+    
+
+    <script>
+        function callData(){
+            var data = 100;
+            return data;
+        }
+
+        var getData = callData();
+        document.write(getData);
+    </script>
+
+</body>
+</html>

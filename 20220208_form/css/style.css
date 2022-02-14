@@ -22,7 +22,12 @@ fieldset{
 
 
 /* content */
-#content .field{position: relative;}
+#content .field{
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+    height: 50px;
+}
+#content .field:last-child{border-bottom: 0 none;}
 #content .field .inp-field{
     width: 350px;height: 49px;
     border:0 none;font-size: 16px;text-indent: 14px;
@@ -38,3 +43,70 @@ fieldset{
 }
 #content .field .icon.email{background-position: 0 -47px;}
 #content .field .icon.pass1{background-position: 0 -466px;}
+#content .field .icon.pass2{background-position: 0 -515px;}
+
+#content .field.radio{height: 50px;}
+
+p.radio>input:nth-child(1):checked ~ label.male {background:#eee  !important}
+p.radio>input:nth-child(2):checked ~ label.female{background: #eee !important;}
+
+
+#content .field.radio input{position: relative;left: 20px;top: 20px;}
+
+#content .field .btn-label{
+    width: 212px;height: 31px;
+    position: absolute;top: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    display: flex;justify-content: center;align-items: center;
+    background: white;cursor:pointer
+}
+#content .field .btn-label.male{left: 15px;}
+#content .field .btn-label.female{right: 15px;}
+
+#content .field.birth
+{
+    display: flex;justify-content: space-between;align-items: center;
+}
+
+#content .field.birth label{
+    display: flex;width: 53px;height:100%;
+    justify-content: center;align-items: center;
+
+}
+
+#content .field.birth select,
+#content .field.confirm select
+{
+    width: 110px;height: 29px;
+    text-indent: 10px;font-size: 15px;
+    border: 0 none;
+}
+
+#content .field.birth .field-wall{
+    display: block; width: 2px;width: 0;height: 29px;border-right: 1px solid #cdcdcd;
+    text-indent:-9999px;
+}
+
+#content .field.confirm .btn-click{
+    width: 99px;height: 31px;background: #fff;
+    border: 1px solid #dcdcdc;position: absolute;right: 10px;top: 10px;
+    cursor: pointer;
+}
+
+#content .btn-submit{
+    width: 100%;height: 59px;border: 1px solid #1fbc02;
+    background-image: url(../images/btn_join2.gif);
+    background-color: #1fbc02;
+    background-repeat: no-repeat;
+    background-position: 50% -4px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+/* common  */
+.w458{width: 458px !important;}
+.w300{width: 300px !important;}
+.w200{width: 200px !important;}
+.w145{width: 145px !important;}
+.w130{width: 130px !important;}

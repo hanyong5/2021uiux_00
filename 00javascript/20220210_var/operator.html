@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        
+
+        function name(){
+            var str = "한";
+            var str1 = "성용";
+
+            var name = str + str1;
+
+            document.write(name);
+        }
+
+        function add(){
+            var num1 = 9;
+            var num2 = 2;
+            var total = num1 % num2;
+            var answer;
+
+
+            if(total == 0){
+                answer = "짝수";
+            }else{
+                answer = "홀수";
+            }
+
+            document.write(answer+"<br>");
+
+            //document.write(total)
+        }
+
+        add(); // call -> 실행
+
+        
+        //document.write(name)
+
+        function plus(){
+            var num = 10;
+            //num = num + 1;
+            //num++;
+
+            document.write("plus 값은 " + num++ +"<br>"); 
+            document.write("plus 값은 " + num +"<br>");
+
+        }
+        
+        
+        
+        plus();
+
+
+        function con(){
+            var a = "20"; //string
+            var b = 20; //number
+            var result;
+
+            result = ( a !== b );
+            document.write(result + "<br>");
+        }
+
+        con();
+
+        function conf(){
+            var num = 10;
+            var num1 = 20;
+
+            var result;
+
+            //if(대입연산자){ true실행 };
+            //if(대입연산자){ true실행 } else { false 실행 };
+
+            if( num > num1 ){
+                document.write("num이 당연히 크죠!!!!");
+            }
+
+            if( num == num1 ){
+                // true실행
+                //document.write("당연히 같죠!!!");
+                result = "당연히 같죠!!!";
+            }else{
+                //false실행
+                //document.write("같지않아요!!!!");
+                result = "같지않아요!!!";
+            }
+
+            document.write(result);
+
+        }
+        
+        
+        
+        conf();
+
+        
+    </script>
+
+
+    <div class="total">홀수일까요 짝수일까요? <script>add();</script></div>
+
+    
+
+</body>
+</html>
