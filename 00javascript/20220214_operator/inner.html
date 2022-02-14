@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+       function insert(){
+            
+            var gender="f"; //남성
+            var age = 18;
+            var result1;
+
+            // if(조건문){ true실행; }
+            // if(조건문){ true실행; }else{ false실행; }
+            if(gender == "m"){
+                
+                if(age >= 19){
+                    result1 = "남자 성인입니다.";
+                }else{
+                    result1 = "남자 미성년입니다."
+                }
+
+            }else{
+
+                if(age >= 19){
+                    result1 = "여성 성인입니다.";
+                }else{
+                    result1 = "여성 미성년입니다.";
+                }
+            }
+
+            document.getElementById("box").innerHTML = result1;
+            document.getElementById("box").style.backgroundColor = "#ff0";
+            document.getElementById("box").style.border = "2px solid #f00"
+    
+        }
+    
+    </script>
+    <style>
+        #box{background: skyblue;}
+    </style>
+</head>
+<body>
+    <div id="box">
+        데이터가 없습니다. 
+    </div>
+
+    <button onclick="insert()">누르세요</button>
+    
+</body>
+</html>
