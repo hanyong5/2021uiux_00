@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <span id="name">홍길동</span> 님은 <span id="adult">ooo</span>
+    </div>
+    <script>
+       var age = 18;
+       var name = "한성용";
+       var result;
+
+
+       if(age >= 19){
+           //ducument.write("성인입니다.");
+           result = "성인입니다.";
+       }else{
+           //document.write("성인이아닙니다.");
+           result = "미성년입니다.";
+       }
+
+       //document.write(result)
+       var aEle = document.getElementById("adult");
+
+       console.log(aEle.innerHTML);
+       aEle.innerHTML = result;
+
+       console.log(document.getElementById("name").innerHTML)
+
+       var nameEle = document.getElementById("name");
+
+       nameEle.innerHTML = name;
+
+       nameEle.style.background = "skyblue";
+       nameEle.style.display = "block";
+       nameEle.style.border = "1px solid #000";
+
+
+    </script>
+</body>
+</html>

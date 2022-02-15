@@ -51,56 +51,58 @@
     </style>
 </head>
 <body>
-    <div class="formWrap">
-        <form action="#">
-            <fieldset>
-                <legend>여행일정</legend>
-                <div class="field">
-                    <label for="go">가고싶은 나라를 선택하세요</label>
-                    <select name="goSelect" id="go" class="inp-field">
-                        <option value="">선택하세요</option>
-                        <option value="제주도">제주도</option>
-                        <option value="베이징">베이징</option>
-                        <option value="도코">도코</option>
-                        <option value="하와이">하와이</option>
+<div class="formWrap">
+    <form action="#">
+        <fieldset>
+            <legend>여행일정</legend>
+            <div class="field">
+                <label for="go">가고싶은 나라를 선택하세요</label>
+                <select name="goSelect" id="go" class="inp-field">
+                    <option value="">선택하세요</option>
+                    <option value="제주도">제주도</option>
+                    <option value="베이징">베이징</option>
+                    <option value="도코">도코</option>
+                    <option value="하와이">하와이</option>
+                </select>
+            </div>
+            <div class="field day">
+                <div class="left">
+                    <label for="start">출발일</label>
+                    <input type="date" name="start" id="start" class="inp-field">
+                </div>
+                <div class="right">
+                    <label for="end">도착일</label>
+                    <input type="date" name="end" id="end" class="inp-field">
+                </div>
+            </div>
+            <div class="field grade">
+                <div class="left">
+                    <label for="sgrade">좌석등급</label>
+                    <select name="grade" id="sgrade" class="inp-field">
+                        <option value="">선택</option>
+                        <option value="일반석">일반석</option>
+                        <option value="비지니스">비지니스</option>
                     </select>
                 </div>
-                <div class="field day">
-                    <div class="left">
-                        <label for="start">출발일</label>
-                        <input type="date" name="start" id="start" class="inp-field">
+                <div class="right">
+                    <div class="adult">
+                        <label for="age1">성인</label>
+                        <input type="number" name="age1" id="age1" class="inp-field" placeholder="1">
                     </div>
-                    <div class="right">
-                        <label for="end">도착일</label>
-                        <input type="date" name="end" id="end" class="inp-field">
-                    </div>
-                </div>
-                <div class="field grade">
-                    <div class="left">
-                        <label for="sgrade">좌석등급</label>
-                        <select name="grade" id="sgrade" class="inp-field">
-                            <option value="">선택</option>
-                            <option value="일반석">일반석</option>
-                            <option value="비지니스">비지니스</option>
-                        </select>
-                    </div>
-                    <div class="right">
-                        <div class="adult">
-                            <label for="age1">성인</label>
-                            <input type="number" name="age1" id="age1" class="inp-field" placeholder="1">
-                        </div>
-                        <div class="childe">
-                            <label for="age2">아이</label>
-                            <input type="number" name="age2" id="age2" class="inp-field" placeholder="1">
-                        </div>
+                    <div class="childe">
+                        <label for="age2">아이</label>
+                        <input type="number" name="age2" id="age2" class="inp-field" placeholder="1">
                     </div>
                 </div>
-                
+            </div>
 
-            </fieldset>
-            <input type="submit" class="inp-field btn">
-        </form>
-    </div>
+
+        </fieldset>
+        <input type="submit" class="inp-field btn">
+    </form>
+</div>
+
+
     
 </body>
 </html>
