@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body{
+            background-image: url(images/bg02.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap{position: relative;}
+        .wrap form{display: flex;}
+        .wrap label{
+            display: block;width: 60px;height: 20px;
+            background-image: url(images/searchtext.jpg);
+            text-indent: -9999px;
+            position: absolute;
+            align-self: center;
+            left: 15px;
+        }
+        .wrap .inp-search{
+            width: 400px;height: 50px;
+            border-radius:25px;
+            text-indent:90px;
+            border: 3px solid #aaa;
+            font-size: 16px;
+            
+        }
+        .wrap .inp-search:focus{outline: 0 none;}
+        .wrap .btn-search{
+            width: 40px;height: 40px;
+            position: absolute;
+            align-self: center;
+            right: 15px;
+            border: 0 none;
+            background-image: url(images/search.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #fff;
+            text-indent: -9999px;
+            cursor: pointer;
+        }
+        .top{
+            background-image: url(images/topbg.png);
+            background-color: #0862A1;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 100%;
+        }
+        .container{
+            width: 980px;height: 90px;_background: skyblue;
+            margin: 0 auto
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top">
+        <div class="container"></div>
+    </div>
+    <div class="wrap">
+        <form action="#">
+            <label for="search">search</label>
+            <input type="text" id="search" name="search" placeholder="검색어를 입력하세요" class="inp-search">
+            <input type="submit" class="btn-search" value="button">
+        </form>
+    </div>
+</body>
+</html>
