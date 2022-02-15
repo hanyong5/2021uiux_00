@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/instagram.min.css">
     <style>
-        body{display: flex;justify-content: center;align-items: center;}
+        body{
+            display: flex;justify-content: center;align-items: center;
+            background:linear-gradient(45deg, #30cfd0 0%, #330867 100%);
+            min-width:1000px
+        }
         
         
         .box01{
@@ -15,6 +20,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
             transform:translate(0,0);
             transition:0.3s;position: relative;
+            cursor:pointer
         }
         .box01 img{
             max-width: 100%;display: block;
@@ -44,22 +50,66 @@
             align-items: center;
             transition: 0.3s;
         }
-        .barWrap div{
+        .barWrap:after{
+            content:"";
+            position: absolute;width: 20px;height: 4px;
+            background: #fff;border-radius:2px;
+        }
+        .barWrap:before{
+            content:"";
+            position: absolute;width: 20px;height: 4px;
+            background: #fff;border-radius:2px;
+            transform: rotate(90deg);
+        }
+
+
+
+
+        /* .barWrap div{
             position: absolute;
             width: 20px;height: 4px;background: #fff;
             border-radius: 2px;
         }
-        .barWrap div.bar2{transform: rotate(90deg);}
+        .barWrap div.bar2{transform: rotate(90deg);} */
 
         .box01:hover .barWrap{transform:translate(-50%,-50%) rotate(180deg);}
+
+
+        .box01 .bg{
+            width: 100%;height: 100%;position: absolute;top: 0;left: 0;
+            background: rgba(0, 65, 97, 0.3);
+            transition: 0.3s
+        }
+
+        .box01:hover .bg{opacity:0}
     </style>
 </head>
 <body>
-    <div class="box01">
-        <img src="../images/testimg.jpg" alt="">
+    <div class="box01" onclick="location.href='http://www.naver.com'">
+        <div>
+            <img src="../images/testimg.jpg" alt="">
+        </div>
+        
+        <div class="bg"></div>
         <div class="barWrap">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
+            <!-- <div class="bar1"></div>
+            <div class="bar2"></div> -->
+        </div>
+    </div>
+    <div class="box01" onclick="location.href='http://www.naver.com'">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="barWrap">
+            <!-- <div class="bar1"></div>
+            <div class="bar2"></div> -->
+        </div>
+    </div>
+    <div class="box01" onclick="location.href='http://www.naver.com'">
+        <img src="../images/testimg.jpg" alt="">
+        <div class="bg"></div>
+        <div class="barWrap">
+            <!-- <div class="bar1"></div>
+            <div class="bar2"></div> -->
         </div>
     </div>
 </body>
