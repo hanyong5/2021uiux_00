@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="dayColor">
+    <script>
+    //  #1   if(조건문){ t };
+    //  #2   if(조건문){ t }else{ f };
+    //  #3   if(조건문){ t }else if(조건문){ t }else if(조건문){ t }else{ f }
+    // 변수 data / literal = num,str,boolean,array,object,null,undefined
+
+
+    var point = 85;
+    var grade = "";
+
+    if(point >= 90){
+        grade = "A";
+    }else if(point >= 80){
+        grade = "B";
+    }else if(point >= 70){
+        grade = "C";
+    }else if(point >= 60){
+        grade = "D";
+    }else{
+        grade = "F";
+    }
+
+    document.write(grade + "등급입니다.<br>");
+
+
+    var jum = 81;
+    var jumWr = "";
+
+    if(jum >= 90 && jum <= 100){ // 100~90
+        jumWr = "A";
+    }
+
+    if(jum >= 80 && jum < 90){ //89~80
+        jumWr = "B";
+    }
+
+    if(jum >= 70 && jum < 80){ //79 ~ 70
+        jumWr = "C";
+    }
+    if(jum >= 60 && jum < 70){ // 69~60
+        jumWr = "D";
+    }
+
+    if(jum < 60){ // 59
+        jumWr = "F";
+    }
+
+    document.write(jumWr + "등급입니다.<br>");
+
+
+    var num = new Date().getDay();
+    var today ="";
+    var bgColor = "";
+
+    // if(num == 0){
+    //     today = "일";
+    // }
+    // if(num == 1){
+    //     today = "월";
+    // }
+    // if(num == 2){
+    //     today = "화";
+    // }
+    // if(num == 3){
+    //     today = "수";
+    //     bgColor = "skyblue";
+    // }
+    // if(num == 4){
+    //     today = "목";
+    //     bgColor = "pink";
+    // }
+    // if(num == 5){
+    //     today = "금";
+    // }
+    // if(num == 6){
+    //     today = "토";
+    // }
+
+    switch(num){
+        case 0:
+            today = "일";
+            break;
+        case 1:
+            today = "월";
+            break;
+        case 2:
+            today = "화";
+            break;
+        case 3:
+            today = "수";
+            bgColor = "skyblue";
+            break;
+        case 4:
+            today = "목";
+            break;
+        case 5:
+            today = "금";
+            break;
+        case 6:
+            today = "토";
+            break;
+        
+    }
+
+    document.write(today + "요일");
+
+    document.getElementById("dayColor").style.backgroundColor = bgColor;
+    </script>
+
+    <input type="number" id="inp-text" value="">
+</body>
+</html>
