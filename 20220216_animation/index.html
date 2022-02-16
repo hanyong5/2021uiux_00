@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body{
+            background-image: url(../images/pc02.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .box{
+            width: 100px;height: 100px;
+            background: skyblue;
+            position: absolute;
+            left: 0;
+            animation-name:boxani;
+            animation-duration: 2s;
+
+
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction:alternate;
+            animation-timing-function: ease;
+            animation-delay: 1s;
+
+        }
+        @keyframes boxani{
+            0%{left:0;width: 100px;height: 100px;background: #000;}
+            100%{left: 500px;width: 200px;height: 200px;background: #f00;}
+            /* 100%{left:0} */
+        }
+
+        .mouse{
+            width: 30px;height: 40px;background: skyblue;
+            border-radius: 15px;position: absolute;
+            cursor: pointer;
+            bottom: 40px;left:50%;transform: translateX(-50%);
+
+            animation-name:mouseAni;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+        .mouse:after{
+            content:"";
+            display: block;width: 15px;height: 15px;border-radius: 50%;
+            background: #fff;position: absolute;left:50%;transform: translateX(-50%);
+            top: 4px;
+        }
+
+        @keyframes mouseAni {
+            from{bottom: 40px;}
+            to{bottom: 60px;}
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box"></div> -->
+
+    <div class="mouse"></div>
+</body>
+</html>
