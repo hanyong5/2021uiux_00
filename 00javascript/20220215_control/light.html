@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        body{display: flex;justify-content: center;align-items: center;}
+        .box{width: 100px;}
+        .box img{display: block;margin-bottom: 10px;}
+
+        .btnWrap{display: flex;justify-content: center;}
+        #bgColor{background: #000;}
+    </style>
+</head>
+<body id="bgColor">
+    <div class="box">
+        <img src="images/light_off.png" alt="1111" id="light" class="">
+        <div class="btnWrap">
+            <button onclick="lightOn()">켜기</button>
+            <button onclick="lightOff()">끄기</button>
+        </div>
+    </div>
+    <script>
+        function lightOn(){
+            console.log("켰음");
+            console.log(document.getElementById("light").classList.value);
+            document.getElementById("light").src = "images/light_on.png";
+            document.getElementById("bgColor").style.background = "yellow";
+        }
+        function lightOff(){
+            console.log("껐음");
+            document.getElementById("light").src = "images/light_off.png";
+            document.getElementById("bgColor").style.background = "#000"
+        }
+        
+    </script>
+</body>
+</html>
