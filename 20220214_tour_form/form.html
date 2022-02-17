@@ -15,8 +15,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            
         }
-        .wrap{position: relative;}
+        .wrap{position: relative;z-index: 1;}
         .wrap form{display: flex;}
         .wrap label{
             display: block;width: 60px;height: 20px;
@@ -60,13 +62,49 @@
             width: 980px;height: 90px;_background: skyblue;
             margin: 0 auto
         }
+
+        .img01{
+            position: absolute;
+            transform: translateY(-100px) translateX(200px);
+            animation-name:bal01;
+            animation-duration: 2s;
+            /* animation-fill-mode: forwards; */
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            z-index: 1;
+            transform-origin: center bottom;
+        }
+        @keyframes bal01{
+            from{transform: translateY(-90px) translateX(200px) rotate(-20deg);}
+            to{transform: translateY(-120px) translateX(200px) rotate(20deg);}
+        }
+
+        .img02{
+            position: absolute;left:-100%;bottom:-100%;
+
+            animation-name:air1;
+            animation-duration: 10s;
+            /* animation-iteration-count: infinite; */
+            animation-timing-function: linear;
+        }
+
+        @keyframes air1 {
+            from{left:-100%;bottom:-100%;width:50%}
+            to{left:100%;bottom:100%;width: 20%;}
+        }
+
+       
     </style>
 </head>
 <body>
 
-    <div class="top">
+    <!-- <div class="top">
         <div class="container"></div>
-    </div>
+    </div> -->
+
+    
+
+    <img src="images/content2.png" alt="" class="img01">
     <div class="wrap">
         <form action="#">
             <label for="search">search</label>
@@ -74,5 +112,6 @@
             <input type="submit" class="btn-search" value="button">
         </form>
     </div>
+    <img src="images/reallyAir.png" alt="" class="img02">
 </body>
 </html>
