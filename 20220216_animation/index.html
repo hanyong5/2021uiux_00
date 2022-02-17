@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <style>
         body{
             background-image: url(../images/pc02.jpg);
@@ -43,6 +45,7 @@
 
             animation-name:mouseAni;
             animation-duration: 1s;
+            
             animation-delay: 1s;
             animation-fill-mode: forwards;
             animation-iteration-count: infinite;
@@ -60,11 +63,33 @@
             from{bottom: 40px;}
             to{bottom: 60px;}
         }
+
+        .boxMouse{font-size: 2em;color:aqua}
+        
+        .boxM{
+            background: skyblue;width: 200px;
+            height: 40px;border-radius: 5px;
+        }
+        .boxM a{
+            display: block;height: 40px;
+            display: flex;align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .boxM a>i{margin-right: 0.5em;font-size:18px;}
+        .boxM:hover{background: rgb(2, 72, 100);}
+        .boxM:hover a{color:#fff}
     </style>
 </head>
 <body>
     <!-- <div class="box"></div> -->
 
     <div class="mouse"></div>
+
+    <div class="boxMouse"><i class="fas fa-mouse"></i></div>
+
+    <div class="boxM">
+        <a href="#"><i class="fas fa-ghost"></i> 제품소개</a>
+    </div>
 </body>
 </html>
