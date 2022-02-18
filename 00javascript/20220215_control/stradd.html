@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script01.js"></script>
+    <style>
+        .box{width: 500px;display: flex;flex-wrap: wrap;}
+        .box .box1{width: 100px;height: 100px;display: flex;justify-content: center;align-items: center;}
+        .box div:nth-child(2n+1){background: skyblue;}
+    </style>
+</head>
+<body>
+    <button onclick="add()">추가</button>
+    <button onclick="remove()">전체삭제</button>
+    <div class="box">
+
+    </div>
+
+    <script>
+        let i = 1;
+        const boxElem = document.getElementsByClassName("box")[0];
+
+        function add(){
+            //boxElem.innerHTML += "<div class='box1'>" + i++ +"</div>";
+            boxElem.innerHTML += `<div class="box1">${i++}</div>`; // i++ i=i+1
+            
+        }
+        function remove(){
+            boxElem.innerHTML = ""; // .box 작식 html내용 삭제
+            i = 1; // 내용삭제후 초기화
+        }
+
+        console.log(i)
+    </script>
+
+</body>
+</html>
