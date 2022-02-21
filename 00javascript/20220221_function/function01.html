@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        printMsg("홍길동",20);
+        function printMsg(name,age){ // 일반함수
+            document.write(name + "님, 안녕하세요. 당신은 " + age + "살 입니다.<br>");
+        }
+
+        printMsg("춘식이",2);
+    </script>
+    <button onclick="printMsg('철수',15)">클릭</button>
+
+
+    <script>
+        var han = function(name){ // 표현식함수
+            console.log(name + "님, 여긴콘솔")
+        }
+        han("한성용");
+
+    </script>
+
+    <div>결과값 <span id="result">0</span> 입니다.</div>
+    <script>
+        function add(a,b){
+            var sum = 0;
+            sum = a + b;
+            console.log(a)
+            return sum;
+        }
+
+        var result = add(100,200);
+
+        //console.log(a)
+
+        document.getElementById("result").innerHTML = result;
+    </script>
+</body>
+</html>
