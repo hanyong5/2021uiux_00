@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>1합은 <span class="hap" id="hap1">0</span></div>
+    <div>2합은 <span class="hap" id="hap">0</span></div>
+    <div>3합은 <span class="hap" id="hap2">0</span></div>
+
+    <script>
+
+    //1. for 1~10합을구하시오
+    //2. 합구하는 함수로 제작, 인자 넣어서 변수의 값으로 합을 구함
+    //3. result에 값을 치환
+    //4. result 값을 class = "hap"에 html로 삽입
+
+
+
+
+
+
+
+
+
+    
+    var result;
+    function add(n){
+        var sum = 0; //변수초기화
+        for(var i=1;i<=n;i++){
+            sum = sum + i;
+        }
+        //document.write(sum)
+        return sum;
+    }
+    result = add(10);
+    //document.write(result)
+    //document.getElementById("hap").innerHTML =result;
+    //document.getElementsByClassName("hap")[1].innerHTML = result;
+    document.querySelector("div .hap").innerHTML = result;
+    document.querySelectorAll(".hap")[2].innerHTML = result;
+    document.querySelectorAll("div")[1].style.background = "skyblue"
+    </script>
+</body>
+</html>

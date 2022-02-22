@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        .box{display: flex;width: 1000px;flex-wrap: wrap;}
+        .box li{width: 25%;}
+        .box img{max-width: 100%;}
+    </style>
+</head>
+<body>
+
+    <ul class="box">
+
+    </ul>
+
+
+    <script>
+        var str = "han";
+        var cls = [20,23,30,40,10,100,60]; //array data
+        var img = [
+            "img1.jpg",
+            "img2.jpg",
+            "img3.jpg",
+            "img4.jpg",
+            "img5.jpg",
+            "img6.jpg",
+            "img7.jpg",
+            "img1.jpg"
+        ];
+        var txt = [
+            "앵무새",
+            "장미",
+            "거위",
+            "바이킹",
+            "눈사람",
+            "양",
+            "잉꼬앵무",
+            "앵무새",
+        ]
+        var obj = {ban2:23,ban3:40,ban1:10} // object data
+
+        for(var i=0;i<cls.length;i++){
+            document.write(cls[i]+" ");
+        }
+
+        var html = "";
+
+        for(var i=0;i<img.length;i++){
+            //document.write(`<img src="../../images/${img[i]}">`);
+            //html += `<li><img src="../../images/${img[i]}"></li>`
+            html +=     `<li>
+                            <img src="../../images/${img[i]}">
+                            <p>${txt[i]}</p>
+                        </li>`
+        }
+
+        console.log(html);
+        document.querySelector(".box").innerHTML = html;
+
+        
+    </script>
+</body>
+</html>
