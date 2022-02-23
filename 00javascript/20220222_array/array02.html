@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+
+    <ul class="box">
+
+    </ul>
     <script>
        var city =  ["seoul","busan","inchon","daegu","대전"];
        var cLink = ["www.naver.com","www.daum.net","www.korea.com","www.dbcut.com","www.daum.net"]
@@ -24,6 +28,27 @@
         document.write("</li>");
     }
     document.write("</ul>");
+
+    //문서조작
+    var html="";
+    for(var i=0;i<city.length;i++){
+        // html += "<li>";
+        // html += city[i];
+        // html += "</li>";
+
+        // html = html + "문장"
+        html += `
+                <li>
+                    <a href="http://${sLink[i]}">${city[i]}</a>
+                </li>
+                `
+    }
+
+    document.querySelector(".box").innerHTML = html;
+
+
+
     </script>
+
 </body>
 </html>
