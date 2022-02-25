@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        .menu{width: 1000px;margin: 0 auto;display: flex;}
+        .menu li{flex:1;height: 50px;}
+        .menu a{
+            display: block;height: 50px;display: flex;
+            justify-content: center;align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+
+    </ul>
+    <script>
+        // var arr = ["회사소개","제품소개","온라인문의","커뮤니티"]; //array data , 배열 리터럴
+
+        var arr = [
+            ["카카오톡","www.naver.com"],
+            ["제품소개","www.daum.net"],
+            ["온라인문의","www.korea.com"],
+            ["커뮤니티","www.kakao.co.kr"]
+        ]; // 이차원배열
+        var arrNum = arr.length;
+        var str = "";
+        
+        for(var i=0;i<arrNum;i++){
+            //document.write(arr[i]);
+            // str +="<li>"
+            // str += arr[i];
+            // str +="</li>"
+            str += `
+                    <li>
+                        <a href="http://${arr[i][1]}">${arr[i][0]}</a>
+                    </li>
+                    `
+        }
+        console.log(str);
+        document.querySelector(".menu").innerHTML = str
+    </script>
+
+
+
+    <ul>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">온라인문의</a></li>
+        <li><a href="#">커뮤니티</a></li>
+    </ul>
+    
+</body>
+</html>
