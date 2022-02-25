@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="inp">
+    <button onclick="add()">추가</button>
+    <button onclick="del()">삭제</button>
+    <button onclick="sor()">정렬</button>
+
+    <div class="box"></div>
+    <script>
+        var city = ["서울","부산","대전"];
+        document.querySelector(".box").innerHTML = city;
+        
+        function add(){
+            var view = document.querySelector(".inp").value;
+           
+            if(view == ""){
+                return false;
+            }else{
+                city.push(view);
+                document.querySelector(".box").innerHTML = city;
+                document.querySelector(".inp").value = "";
+            }
+         }
+
+        function del(){
+            city.pop();
+            document.querySelector(".box").innerHTML = city;
+        }
+
+        function sor(){
+            city.sort();
+            document.querySelector(".box").innerHTML = city;
+        }
+        
+    </script>
+</body>
+</html>
