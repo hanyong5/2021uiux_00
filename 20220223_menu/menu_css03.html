@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .box{
+            width: 100px;height: 100px;background: skyblue;
+            position:relative;transition: 0.5s;left:0
+        }
+        .box.move{left: 500px;}
+
+        .toggle{
+            width: 40px;height: 40px;background: pink;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;
+        }
+        .toggle div{
+            width: 24px;height: 3px;background: #000;
+            border-radius:5px;position: absolute;
+            transition:0.3s
+        }
+        .toggle .bar1{transform: translateY(-10px);}
+        .toggle .bar3{transform: translateY(10px);}
+
+        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
+        .toggle.active .bar2{opacity:0}
+        .toggle.active .bar3{transform: translateY(0px) rotate(-45deg);}
+
+        .visual{width: 200px;height: 100px;background: skyblue;display: none;}
+    </style>
+</head>
+<body>
+    <button onclick="move()">이동</button>
+    <button onclick="init()">복귀</button>
+    <div class="box" title="안녕하세요">
+
+    </div>
+    <script>
+        let boxElem = document.querySelector(".box");
+        
+        function move(){
+            
+            //console.log(boxElem.classList.value);
+
+            //boxElem.classList.add("move");
+
+            $(".box").addClass("move");
+            console.log( $(".box").attr("class") )
+
+        }
+        function init(){
+            //boxElem.classList.remove("move");
+            $(".box").removeClass("move")
+        }
+    </script>
+
+
+
+    <div class="toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="visual"></div>
+    <script>
+        let check = 0;
+        $(".toggle").click(function(){
+            if(check == 0){
+                $(".toggle").addClass("active");
+                $(".box").addClass("move");
+                $(".visual").show()
+                check = 1;
+            }else{
+                $(".toggle").removeClass("active");
+                $(".box").removeClass("move");
+                $(".visual").hide()
+                check = 0;
+            }
+
+            console.log(check)
+        })
+    </script>
+</body>
+</html>
