@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">1</div>
+    <script>
+        var array = [50,100]; // array[0], array[1]
+        var obj = {kor:50,eng:100}; // obj['kor'] obj.eng
+
+        var car = {
+            name:"sonata",
+            color:"red",
+            speed:100,
+            door:4,
+            start:function(){
+                return this.speed + 200;
+            }
+        }
+
+        document.write(car.name+car.color);
+        document.querySelector(".box").style.background = car.color;
+        document.querySelector(".box").innerHTML = car.start();
+
+        var carArray = new Array(10,20,30);
+        carArray.push(50)
+        document.write(carArray)
+
+        //생성자함수
+        function char(name,year,key){
+           this.name = name;
+           this.year = year;
+           this.key = key;
+           this.start = function(a){
+               return this.year + a;
+           }
+        }
+
+        var han = new char("한성용",30,175)
+        var park = new char("박서준",25,180);
+        document.write(park.start(10))
+    </script>
+</body>
+</html>

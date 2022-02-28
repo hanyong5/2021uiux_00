@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .box,.box1,.box2{
+            width: 100px;height: 100px;background: skyblue;cursor: pointer;
+            transition: 0.3s;
+        }
+        .box.big{width: 200px;height: 200px;}
+
+        .box1{background: pink;}
+        .box1.big{width: 150px;height: 150px;}
+
+        .box2{background: red;}
+        .box2.big{width: 150px;height: 150px;}
+    </style>
+</head>
+<body>
+    <button onclick="add()">커져라</button>
+    <button onclick="remove()">작아져</button>
+    <button onclick="mo()">변경</button>
+    
+    <div class="box"></div>
+
+    <script>
+
+        function add(){
+            document.querySelector(".box").classList.add("big")  //setter       
+        }
+        function remove(){
+            document.querySelector(".box").classList.remove("big")
+        }
+
+        var chk = true;
+
+        function mo(){
+            if( chk == true){
+                document.querySelector(".box").classList.add("big")  //setter 
+                chk = false;
+            }else{
+                document.querySelector(".box").classList.remove("big")
+                chk = true;
+            }
+        }
+
+        
+        console.log(document.querySelector(".box").classList[1])  //getter
+    </script>
+
+
+    <div class="box1"></div>
+    <script>
+
+        var chk1 = true;
+        console.log(chk1)
+        $(".box1").click(function(){
+            //console.log("big");
+
+            if(chk1 == true){
+                $(".box1").addClass("big");
+                chk1 = false;
+                console.log(chk1)
+            }else{
+                $(".box1").removeClass("big");
+                chk1 = true;
+                console.log(chk1)
+            }
+        });
+
+        
+    </script>
+
+
+    <div class="box2" onclick="tog()"></div>
+    
+
+    <script>
+        function tog(){
+            document.querySelector("div.box2").classList.toggle("big")
+        }
+       
+    </script>
+
+</body>
+</html>
