@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{display: flex;background: blue;flex-wrap: wrap;}
+        .container .item1{background: pink; }
+        .container .item2{background: skyblue;}
+        .container .item3{background: gray;}
+        .container .item4{background: green;}
+        .container .item5{background: yellow;}
+        .container div{
+            /* flex-grow:1; */
+            /* flex:1 1 auto */
+            /* flex-grow:1;
+            flex-shrink:1; */
+            flex-grow: 1;
+            flex-basis: 30%;
+            /* width:50% */
+        }
+
+        @media screen and (max-width:600px){
+            .container div{flex-basis: 50%;}
+        }
+        .container1{display: flex;}
+        .container1 .left{width: 200px;background: red;flex-shrink: 0;}
+        .container1 .content{flex:1;background: blue;display: flex;flex-wrap: wrap;}
+        .content div{width: 200px;height: 200px;flex:1 1 30%}
+        .content div:nth-child(2n){background: skyblue;}
+
+
+        @media screen and (max-width:600px){
+            .container1{flex-direction: column;}
+            .container1 .left{width: 100%;}
+            .content div{flex:1 1 100%}
+
+            /*  flex:0 1 auto */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="item1">aaa</div>
+        <div class="item2">bbb</div>
+        <div class="item3">ccc</div>
+        <div class="item4">ccc</div>
+        <div class="item5">ccc</div>
+    </div> -->
+
+    <div class="container1">
+        <div class="left">
+            메뉴
+        </div>
+        <div class="content">
+           <div class="item" style="background-image:url(../images/img1.jpg)"></div>
+           <div class="item" style="background-image:url(../images/img2.jpg)"></div>
+           <div class="item" style="background-image:url(../images/img3.jpg)"></div>
+           <div class="item" style="background-image:url(../images/img4.jpg)"></div>
+           <div class="item" style="background-image:url(../images/img5.jpg)"></div>
+           <div class="item" style="background-image:url(../images/img6.jpg)"></div>
+        </div>
+    </div>
+</body>
+</html>
