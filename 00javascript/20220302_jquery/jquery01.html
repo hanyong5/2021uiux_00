@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .wrapper{width: 522px;margin: 0 auto}
+        .wrapper img{display: block;}
+        .wrapper ul{display: flex;justify-content: space-between;}
+        .wrapper li{cursor: pointer;}
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com" class="aTap">네이버</a>
+
+    <div class="box">dddd</div>
+
+    <script>
+        $(".box").hide();
+        $(".aTap").click(function(e){
+            e.preventDefault();
+            console.log(e)
+            $(".box").show();
+        });
+    </script>
+
+    <div class="wrapper">
+        <ul>
+            <li><img src="../images/btn1_1.jpg" alt=""></li>
+            <li><img src="../images/btn2_1.jpg" alt=""></li>
+            <li><img src="../images/btn3_1.jpg" alt=""></li>
+            <li><img src="../images/btn4_1.jpg" alt=""></li>
+        </ul>
+        <div class="image">
+            <img src="../images/spring.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        const imgElem = [
+            "spring",
+            "summer",
+            "fall",
+            "winter"
+        ]
+
+        $(".wrapper>ul>li").click(function(){
+            console.log($(this).index());
+
+            let i = $(this).index(); // 나의 인덱스
+
+
+            // dom.attr("속성이름") getter /  dom.attr("속성이름","변경할속성") setter
+            //$(".image>img").attr("src",`../images/${imgElem[i]]}.jpg`);
+            $(".image>img").attr("src","../images/"+ imgElem[i] +".jpg");
+        });
+    </script>
+
+</body>
+</html>
