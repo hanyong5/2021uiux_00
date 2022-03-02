@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "han";
+        var arr = [10,20,30,40];
+        // arr.join() arr.push()
+
+        //arr.forEach(function(item,index){})
+        //arr.forEach(function(value,index){})
+        arr.forEach(function(v,i){
+            console.log(v)
+        })
+
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i])
+        }
+
+        var obj = {kor:20,eng:30,math:40,move:function(){}}
+        // obj.kor   obj.eng   obj.move()
+
+
+        var obj1 = [
+            {kor:20,eng:30,math:40},
+            {kor:50,eng:40,math:30},
+            {kor:80,eng:90,math:50},
+            {kor:60,eng:40,math:70}
+        ]
+        obj1.forEach(function(v,i){
+            console.log(i + ". 수학점수" + obj1[i].math)
+        })
+
+        console.log(arr.length);
+
+        // 변수지정
+        // 함수만들기
+        // 실행만들기
+        // 이벤트실행
+    </script>
+
+    <div id="box">안녕하세요1</div>
+
+    <script>
+        const str1 = "반갑습니다.";
+        let boxElem = document.getElementById("box").innerHTML; //getter
+        document.write(boxElem);
+        boxElem = str1;  // setter
+        document.write(boxElem);
+    </script>
+
+    <p>car1</p>
+    자동차이름 : <span id="data10">아무거나</span><br>
+    자동차색상 : <span id="data20">아무색</span><br>
+    자동차속도 : <span id="data30">알아서</span>
+
+    <p>car2</p>
+    자동차이름 : <span id="data11">아무거나</span><br>
+    자동차색상 : <span id="data21">아무색</span><br>
+    자동차속도 : <span id="data31">알아서</span>
+
+    <p>car3</p>
+    자동차이름 : <span id="data12">아무거나</span><br>
+    자동차색상 : <span id="data22">아무색</span><br>
+    자동차속도 : <span id="data32">알아서</span>
+
+
+    <script>
+        const mycar = [
+            {name:"소나타",color:"빨간",speed:200},
+            {name:"jeep",color:"노랑",speed:150},
+            {name:"k5",color:"검은색",speed:200},
+        ]
+
+        mycar.forEach(function(v,i){
+            console.log(v.name)
+            //document.getElementById("data1" + i).innerHTML = mycar[i].name;
+            document.getElementById("data1" + i).innerHTML = v.name;
+            document.getElementById("data2" + i).innerHTML = v.color;
+            document.getElementById("data3" + i).innerHTML = v.speed;
+        })
+    </script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
