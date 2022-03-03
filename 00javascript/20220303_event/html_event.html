@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box,.box1,.box2{width: 100px;height: 100px;background: skyblue;}
+        .box2{position: fixed;right: -100%;bottom: 0;transition: 0.3s;}
+    </style>
+</head>
+<body>
+    <div class="box" 
+    onmouseover="this.style.backgroundColor = 'red'" 
+    onmouseout="this.style.backgroundColor = 'skyblue'"
+    ></div>
+    <div class="box" 
+    onmouseover="this.style.backgroundColor = 'red'" 
+    onmouseout="this.style.backgroundColor = 'skyblue'"
+    ></div>
+
+    <div class="box1" id="box"></div>
+    <div class="box2"></div>
+
+    <script>
+        // document.getElementsByClassName("box1")[0];
+        // document.querySelector(".box1"); // document 전체에서 첫번째
+        // document.querySelectorAll(".box1")[0];
+        // $("#box1.box1")
+
+        
+        const boxElem = document.querySelector(".box1");
+        const box2Elem = document.querySelector(".box2");
+
+        boxElem.onmouseover = over;
+        function over(){
+            console.log("마우스오버됨1");
+            boxElem.style.backgroundColor = "blue";
+            boxElem.style.marginLeft = "10px"
+            box2Elem.style.right = "100px"
+        }
+
+        boxElem.onmouseout = out;
+        function out(){
+            boxElem.style.backgroundColor = "skyblue";
+            boxElem.style.marginLeft = "initial"
+            box2Elem.style.right = "-100%"
+        }
+
+
+
+        boxElem.onmouseenter = function(){
+            boxElem.style.border = "10px solid #000"
+        }
+        boxElem.onmouseleave = function(){
+            boxElem.style.border = "initial"
+        }
+    </script>
+</body>
+</html>
