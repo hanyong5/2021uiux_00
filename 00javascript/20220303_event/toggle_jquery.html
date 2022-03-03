@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        body{overflow-x: hidden;}
+        .toggle{
+            width: 40px;height: 40px;background: pink;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;position: relative;z-index: 1;
+        }
+        .toggle div{
+            width: 24px;height: 3px;background: #000;
+            border-radius:5px;position: absolute;
+            transition:0.3s
+        }
+        .toggle .bar1{transform: translateY(-10px);}
+        .toggle .bar3{transform: translateY(10px);}
+
+        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
+        .toggle.active .bar2{opacity:0}
+        .toggle.active .bar3{transform: translateY(0px) rotate(-45deg);}
+
+        .menu{
+            width: 300px;height: 100%;background: skyblue;
+            position: absolute;top: 0;
+            display: flex;justify-content: center;align-items: center;
+            font-size: 2em;right: -300px;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu4</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -64,25 +64,38 @@
         const menuElem = document.querySelector(".menu");
         let chk = true;
 
-
-
         console.log(chk);
 
-        toggleElem.addEventListener("click",function(){
-            //console.log(toggleElem.classList.value);
+        // toggleElem.addEventListener("click",function(){
+        //     //console.log(toggleElem.classList.value);
 
+        //     if( chk == true){
+        //         this.classList.add("active");
+        //         menuElem.style.right = "0"
+        //         chk = false;
+        //     }else{
+        //         this.classList.remove("active");
+        //        menuElem.style.right = "-300px"
+        //        chk = true;
+        //     }
+        //     console.log(chk);
+            
+        // });
+
+        toggleElem.onclick = view;
+  
+        function view(){
             if( chk == true){
-                toggleElem.classList.add("active");
+                this.classList.add("active");
                 menuElem.style.right = "0"
                 chk = false;
             }else{
-               toggleElem.classList.remove("active");
+                this.classList.remove("active");
                menuElem.style.right = "-300px"
                chk = true;
             }
             console.log(chk);
-            
-        });
+        }
 
         // $(".toggle").on("click",function(){})
         // $(".toggle").click(fucntion(){})
