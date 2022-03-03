@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box,.box1,.box2{width: 100px;height: 100px;background: skyblue;}
+        .box,.box1,.box2,.box3{width: 100px;height: 100px;background: skyblue;}
         .box2{position: fixed;right: -100%;bottom: 0;transition: 0.3s;}
+        .box3{background: blue;}
     </style>
 </head>
 <body>
@@ -56,6 +57,19 @@
         boxElem.onmouseleave = function(){
             boxElem.style.border = "initial"
         }
+    </script>
+
+
+    <div class="box3"></div>
+    <script>
+        const box3Elem = document.querySelector(".box3");
+
+        box3Elem.addEventListener("mouseover",function(){
+            box3Elem.style.backgroundColor = "yellow"
+        })
+        box3Elem.addEventListener("mouseout",function(){
+            box3Elem.style.backgroundColor = "blue"
+        })
     </script>
 </body>
 </html>

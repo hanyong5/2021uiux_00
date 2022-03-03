@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body{overflow-x: hidden;}
+        .toggle{
+            width: 40px;height: 40px;background: pink;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;position: relative;z-index: 1;
+        }
+        .toggle div{
+            width: 24px;height: 3px;background: #000;
+            border-radius:5px;position: absolute;
+            transition:0.3s
+        }
+        .toggle .bar1{transform: translateY(-10px);}
+        .toggle .bar3{transform: translateY(10px);}
+
+        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
+        .toggle.active .bar2{opacity:0}
+        .toggle.active .bar3{transform: translateY(0px) rotate(-45deg);}
+
+        .menu{
+            width: 300px;height: 100%;background: skyblue;
+            position: absolute;top: 0;
+            display: flex;justify-content: center;align-items: center;
+            font-size: 2em;right: -300px;
+            transition: 0.3s;
+        }
+    </style>
+
+
+    <script>
+        // 1. 디자인하기
+        // 2. 이벤트메소드를 사용하여 생성( dom.addEventListener("click",function(){}) )
+        // 주어+동사    선택자.실행문(메소드)
+        // 3. dom.classList.add("active")   dom.classList.remove();
+    </script>
+</head>
+<body>
+    <div class="toggle han">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu4</li>
+        </ul>
+    </div>
+    
+
+    <script>
+        const toggleElem = document.querySelector(".toggle");
+        const menuElem = document.querySelector(".menu");
+        let chk = true;
+
+
+
+        console.log(chk);
+
+        toggleElem.addEventListener("click",function(){
+            //console.log(toggleElem.classList.value);
+
+            if( chk == true){
+                toggleElem.classList.add("active");
+                menuElem.style.right = "0"
+                chk = false;
+            }else{
+               toggleElem.classList.remove("active");
+               menuElem.style.right = "-300px"
+               chk = true;
+            }
+            console.log(chk);
+            
+        });
+
+        // $(".toggle").on("click",function(){})
+        // $(".toggle").click(fucntion(){})
+    </script>
+</body>
+</html>
