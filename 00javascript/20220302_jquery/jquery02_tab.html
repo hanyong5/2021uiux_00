@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .tab{width: 500px;display: flex;}
+        .tab li{
+            padding:10px 20px;border: 1px solid #000;cursor: pointer;
+            border-bottom: 0 none;
+        }
+        .tab li.active{background: #333;color:white}
+        .tab li:hover{background: #333;color:white}
+        .content{width: 500px;padding: 16px;border: 1px solid #000;}
+        .content .tcon2{display: none;}
+        .content .tcon3{display: none;}
+    </style>
+</head>
+<body>
+    <ul class="tab">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <div class="content">
+        <div class="tcon1">
+            0Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque rerum odio ducimus fuga. Esse explicabo facere qui repudiandae, maxime laboriosam.
+        </div>
+        <div class="tcon2">
+            1Lorem ipsum dolor sit amet consectetur adipisicing elit. Id amet aliquam aliquid doloribus nesciunt, commodi odio! Numquam sed aut tenetur.
+        </div>
+        <div class="tcon3">
+            2Lorem ipsum dolor sit amet consectetur adipisicing elit. Id amet aliquam aliquid doloribus nesciunt, commodi odio! Numquam sed aut tenetur.
+        </div>
+    </div>
+    <script>
+        // 1. 디자인
+        // 2. 탭 클릭시 active변경
+        // 3. 클릭시 전체 active제거하고 자신만 active추가
+        // 4. content > div 전체 hide() / tab(num)=> 0 1 2 / content > div : eq(0) show()
+
+        $(".tab li").click(function(){
+            console.log($(this).index());
+
+            var i = $(this).index();
+
+            $(".tab li").removeClass("active");
+            $(this).addClass("active");
+
+            // $(".content div").hide();
+            // $(".content div").eq(i).show();
+            $(".content div").hide().eq(i).show();
+        })
+    </script>
+</body>
+</html>
