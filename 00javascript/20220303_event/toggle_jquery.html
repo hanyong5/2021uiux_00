@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
     <style>
         body{overflow-x: hidden;}
         .toggle{
@@ -26,10 +27,10 @@
         .toggle.active .bar3{transform: translateY(0px) rotate(-45deg);}
 
         .menu{
-            width: 300px;height: 100%;background: skyblue;
+            width: 100%;height: 100%;background: skyblue;
             position: absolute;top: 0;
             display: flex;justify-content: center;align-items: center;
-            font-size: 2em;right: -300px;
+            font-size: 2em;left: -100%;
             transition: 0.3s;
         }
     </style>
@@ -49,5 +50,30 @@
             <li>menu4</li>
         </ul>
     </div>
+
+    <script>
+        // 1. ui디자인
+        // 2. 토글메뉴 이벤트실행 ( .toggle 이벤트 click실행)
+        // 3. .toggle에게 addClass(".active") / active 클레스추가
+        // 4. toggle 클릭시 menu 등장( left:-100% -> left:0 ) /  class() 메소드사용
+        
+        const $toElem = $(".toggle");
+        let chk = true;
+
+        $toElem.click(function(){
+            console.log("click")
+
+            if(chk == true){
+                $(this).addClass("active");
+                $(".menu").css({left:0})
+                chk = false;
+            }else{
+                $(this).removeClass("active");
+                $(".menu").css({left:"-100%"})
+                chk = true;
+            }
+        })
+
+    </script>
 </body>
 </html>
