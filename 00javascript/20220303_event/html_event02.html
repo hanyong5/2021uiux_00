@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <a href="#" onclick="location.href='http://www.naver.com'">
+            <li>
+                <ul>
+                    <li onclick="myclick(event)">링크1-1</li>
+                    <li>링크1-1</li>
+                    <li>링크1-1</li>
+                    <li>링크1-1</li>
+                </ul>
+            </li>
+        </a>
+        <li>링크1</li>
+        <li>링크1</li>
+        <li>링크1</li>
+    </ul>
+    <script>
+        function myclick(e){
+            console.log(e.target.tagName + " / " + this.tagName);
+            e.preventDefault();
+            e.stopPropagation();
+            location.href="http://www.daum.net";
+        }
+    </script>
+
+
+    <form id="form">
+        <div>
+            div
+            <p onclick="event.stopPropagation()">p</p>
+        </div>
+    </form>
+    <script>
+        const fElem = document.querySelector("#form");
+        form.onclick = function(e){
+            console.log(e.target);
+            e.target.style.backgroundColor = "skyblue"
+
+            alert(e.target.tagName)
+        }
+    </script>
+</body>
+</html>
