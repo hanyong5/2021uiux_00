@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body{
+            /* height: 400vh; */
+            /* font-size: 6vw;
+            text-align: center; */
+        }
+        .box{width: 100px;height: 10vh;background: skyblue;}
+
+
+        .container{
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .gnbWrap{transition: 0.3s;position: absolute;width: 100%;}
+        .gnbWrap.fixed{position: fixed;width: 100%;background: white;}
+        .gnbWrap.fixed a{color:black;height: 40px;}
+
+        .gnb{width: 1000px;margin: 0 auto}
+        .gnb ul{display: flex;justify-content:space-between}
+        .gnb ul li{_background: skyblue;width:20%;}
+        .gnb ul li a{
+            height: 80px;display: flex;justify-content: center;align-items: center;
+            color:white;font-weight: bold;
+        }
+
+
+        /* color  */
+
+        .con1st{background-image: url(../images/pc01.jpg);}
+        .con2st{background-image: url(../images/pc02.jpg);}
+        .con3st{background-image: url(../images/pc03.jpg);}
+        .gary{background:#ccc}
+        .blue{background: skyblue;}
+        .gold{background: rgb(92, 81, 22);}
+
+        .container.flex{display: flex;justify-content: center;align-items: center;font-size: 6vw;color:white}
+
+    </style>
+</head>
+<body>
+    <div class="gnbWrap"><!-- 100% -->
+        <nav class="gnb"><!-- w1000-->
+            <ul> 
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="container con1st flex">
+        
+        <p class="txt1">Lorem, ipsum dolor.</p>
+    </section>
+    <section class="container con2st">
+        
+    </section>
+    <section class="container blue"></section>
+    <section class="container con3st"></section>
+
+
+    <script>
+        //1. scroll이벤트 : window 객체 관련 정보 window.pageYOffset 
+        //   window.메소드()
+
+
+        window.addEventListener("scroll",function(){
+            //console.log("스크롤실행")
+            let scrollY = window.pageYOffset;
+            console.log(scrollY);
+            if(scrollY > 300){
+                document.querySelector(".gnbWrap").classList.add("fixed");
+                // $(".gnbWrap").addClass("fixed")
+               
+            }else{
+                document.querySelector(".gnbWrap").classList.remove("fixed");
+                
+            }
+        })
+    </script>
+    
+</body>
+</html>
