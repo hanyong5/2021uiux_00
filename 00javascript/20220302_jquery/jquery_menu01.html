@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
     <style>
+        body{height: 400vh;}
         .bg-primary{background: skyblue;}
         .container{
             width: 1000px;margin: 0 auto;
@@ -30,7 +32,7 @@
         .toggle div{
             width: 24px;height: 3px;background: #000;
             border-radius:5px;position: absolute;
-            transition:0.3s
+            transition:0.1s
         }
         .toggle .bar1{transform: translateY(-10px);}
         .toggle .bar3{transform: translateY(10px);}
@@ -42,19 +44,21 @@
         .toggle{display: none;}
 
 
-
-
-
         @media screen and (max-width:768px){
-            .container{width: 100%;}
-            .toggle{display: flex;margin-left:auto;}
+            .container{width: 100%;height: 40px;padding:0 16px;}
+            .toggle{display: flex;position: fixed;right: 16px;top: 0;}
 
             .container .gnb{
-                position: absolute;
+                position: fixed;
                 width: 100%;
                 height: 100%;
                 background: pink;
-                left:0;top:0
+                left:-100%;top:0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+
                 
             }
             .container .gnb > ul{display:block;width:200px}
@@ -80,5 +84,27 @@
             <div class="bar3"></div>
         </div>
     </div>
+    <script>
+        let chk = true;
+        $(".toggle").click(function(){
+            
+            if(chk == true){
+                $(this).addClass("active");
+                console.log( $(".gnb").css("left") ) // getter
+                $(".gnb").css("left",0);
+                // $(".gnb").css({left:0,top:30,"background-color":"red"})
+                chk = false;
+            }else{
+                $(this).removeClass("active");
+                $(".gnb").css("left","-100%")
+                chk = true;
+            }
+        })
+
+        $(window).resize(function(){
+            $(".toggle").removeClass("active");
+            $(".gnb").removeAttr("style");
+        })
+    </script>
 </body>
 </html>
