@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
     <style>
         body{
             /* height: 400vh; */
@@ -26,7 +27,7 @@
         .gnbWrap.fixed{position: fixed;width: 100%;background: white;}
         .gnbWrap.fixed a{color:black;height: 40px;}
 
-        .gnb{width: 1000px;margin: 0 auto}
+        .gnb{max-width: 1000px;margin: 0 auto}
         .gnb ul{display: flex;justify-content:space-between}
         .gnb ul li{_background: skyblue;width:20%;}
         .gnb ul li a{
@@ -45,6 +46,8 @@
         .gold{background: rgb(92, 81, 22);}
 
         .container.flex{display: flex;justify-content: center;align-items: center;font-size: 6vw;color:white}
+
+        .box{position: fixed;right: 0;bottom: 0;width: 150px;}
 
     </style>
 </head>
@@ -70,6 +73,10 @@
     <section class="container blue"></section>
     <section class="container con3st"></section>
 
+    <div class="box">
+        현재스크롤값 <span id="scrollValue"></span>
+    </div>
+
 
     <script>
         //1. window, scroll이벤트 : window 객체 관련 정보 window.pageYOffset 
@@ -77,18 +84,23 @@
         //2. window.pageYOffset 이 300보다 크면 gnbWrap을 add("fixed") 클래스해주세요.
         //3. window.pageYOffset 이 300보다 작으면 gnbWrap을 remove("fixed") 클래스해주세요.
 
+        // $(window).on("scroll",function(){});
+        
+            
+            
+            $(window).scroll(function(){
+                let scrollY = window.pageYOffset;
+                $("#scrollValue").html(scrollY)
 
-        window.addEventListener("scroll",function(){
-            //console.log("스크롤실행")
-            let scrollY = window.pageYOffset;
-            console.log(scrollY);
+                if(scrollY > 300){
+                    $(".gnbWrap").addClass("fixed");
+                }else{
+                    $(".gnbWrap").removeClass("fixed")
+                }
 
-            if( scrollY > 300){
-                document.querySelector(".gnbWrap").classList.add("fixed");
-            }else{
-                document.querySelector(".gnbWrap").classList.remove("fixed");
-            }
-        })
+            })
+
+
     </script>
     
 </body>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .bg-primary{background: skyblue;}
+        .container{
+            width: 1000px;margin: 0 auto;
+            display: flex;align-items:center
+        }
+        .container h1{font-size:20px;background: #ddd;}
+        .container .gnb{
+            margin-left: auto;
+        }
+        .container .gnb > ul{display: flex;width: 600px;}
+        .container .gnb > ul > li{flex:1}
+        .container .gnb > ul > li>a{display: block;line-height:50px;text-align: center;}
+        .container .gnb > ul > li:hover{background: gray;}
+
+        /* toggle  */
+        .toggle{
+            width: 40px;height: 40px;background: pink;
+            display: flex;justify-content: center;align-items: center;
+            cursor: pointer;
+        }
+        .toggle div{
+            width: 24px;height: 3px;background: #000;
+            border-radius:5px;position: absolute;
+            transition:0.3s
+        }
+        .toggle .bar1{transform: translateY(-10px);}
+        .toggle .bar3{transform: translateY(10px);}
+
+        .toggle.active .bar1{transform: translateY(0) rotate(45deg);}
+        .toggle.active .bar2{opacity:0}
+        .toggle.active .bar3{transform: translateY(0px) rotate(-45deg);}
+
+        .toggle{display: none;}
+
+
+
+
+
+        @media screen and (max-width:768px){
+            .container{width: 100%;}
+            .toggle{display: flex;margin-left:auto;}
+
+            .container .gnb{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: pink;
+                left:0;top:0
+                
+            }
+            .container .gnb > ul{display:block;width:200px}
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container bg-primary">
+        <h1><a href="#">logo</a></h1>
+        <nav class="gnb">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">company</a></li>
+                <li><a href="#">product</a></li>
+                <li><a href="#">community</a></li>
+            </ul>
+        </nav>
+        <div class="toggle">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+</body>
+</html>
