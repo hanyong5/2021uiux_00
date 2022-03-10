@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+#gallery{width: 824px;margin: 30px auto;background: pink;}
+#image{width: 760px;margin: 0 auto;margin-bottom: 10px;}
+#image p{display: none;}
+
+#thumbnail{
+    background: skyblue;display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#thumbnail .thumb{
+    width: 760px;
+}
+#thumbnail .thumb li{float: left;margin-left: 8px;}
+
+#thumbnail .left,
+#thumbnail .right
+{   width: 32px;height: 75px;background: blue;cursor: pointer;
+    display: flex;justify-content: center;
+    align-items: center;
+}
+
+
+/* common  */
+.ml0{margin-left: 0 !important;}

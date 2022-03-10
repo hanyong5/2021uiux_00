@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div class="box">text1</div>
+    <div class="box">text2</div>
+    <div class="box">text3</div>
+    <div class="box">text4</div>
+    <div class="box">text5</div>
+    <div class="box">text6</div>
+    <button class="btn">클릭</button>
+    <script>
+        //javascript
+        document.getElementsByClassName("box")[0]; // getter
+        document.getElementsByClassName("box")[1]; // getter
+        document.querySelector(".box") // body의 전체중 첫번째
+
+        //jquery
+        //$(".box") // 유사배열 $(".box").length $(".box").index()
+
+        let boxLength = document.querySelectorAll(".box");
+        console.log(boxLength.length)
+
+        for(let i=0;i<boxLength.length;i++){
+           boxLength[i].innerHTML = "test123"
+        }
+
+        const $boxColor = $(".box").eq(0).css("color") //getter
+        console.log($boxColor)
+
+        
+        // $(".box").eq(0).css("color","red") //setter
+
+        // $(".btn").click(function(){
+        //     $(".box").eq(0).css("color","red").css("background-color","skyblue")
+        // });
+
+        document.querySelector(".btn").onclick = function(){
+            boxLength[0].style.color = "red"
+        }
+        
+    </script>
+</body>
+</html>
