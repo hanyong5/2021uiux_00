@@ -10,15 +10,22 @@
     align-items: center;
 }
 #thumbnail .thumb{
-    width: 760px;
+    width: 760px;overflow: hidden;
 }
+#thumbnail .thumb ul{
+   position: relative;
+   width: 2280px;left: 0;
+   transition: 0.3s;
+}
+
+
 #thumbnail .thumb li{float: left;margin-left: 8px;}
 
 #thumbnail .left,
 #thumbnail .right
-{   width: 32px;height: 75px;background: blue;cursor: pointer;
+{   width: 32px;height: 75px;_background: blue;cursor: pointer;
     display: flex;justify-content: center;
-    align-items: center;
+    align-items: center;z-index: 1;
 }
 
 
