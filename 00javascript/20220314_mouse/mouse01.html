@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{height: 100%;}
+    </style>
+</head>
+<body>
+    <form >
+        <label for="exp">식</label> <input type="text" id="exp" value=""><br>
+        <label for="result">값</label> <input type="text" id="result"><br>
+       
+        <input type="button" value="결과" onclick="cal()">
+         
+         
+    </form>
+
+    <script>
+        function cal(){
+          const expElem = document.getElementById("exp");
+          const resultElem = document.getElementById("result");
+
+          resultElem.value = eval(expElem.value);
+        }
+    </script>
+
+
+    <div>마우스 관련 <span 
+        onmousedown="down(this)"
+        onmouseup="up(this)"
+        onmouseover="over(this)"
+        onmouseout="out(this)"
+        >이벤트</span> 가 발생합니다.</div>
+
+    <!-- <img src="../images/testimg.jpg" alt=""> -->
+    <script>
+        function down(obj){
+            //document.getElementsByTagName("span")[0].style.fontStyle = "italic";
+            obj.style.fontStyle = "italic"
+        }
+        function up(obj){
+            obj.style.fontStyle = "normal"
+        }
+        function over(obj){
+            obj.style.borderColor = "violet"
+        }
+        function out(obj){
+            obj.style.borderColor = "lightgray"
+        }
+        // function wheel(e,obj){
+        //     console.log(e.wheelDelta)
+        // }
+
+        // document.getElementsByTagName("body")[0].onwheel = function(e){
+        //     console.log(e.wheelDelta)
+        // }
+
+        let width=0;
+
+        document.body.onwheel = function(e){
+            //console.log("wheel : "+ e.wheelDelta);
+            if(e.wheelDelta < 0){
+                width--;
+                if(width<0){width=0}
+                
+            }else{
+                width++;
+            }
+            console.log("border:"+width);
+            
+            const spanElem = document.getElementsByTagName("span")[0];
+            spanElem.style.borderStyle="solid";
+            spanElem.style.borderWidth= width+"px";
+
+        }
+    </script>
+
+    <style>
+        .box{
+            width: 10px;height: 10px;background: red;
+            position: absolute;transition: 0.1s;
+        }
+        .box1{
+            width: 10px;height: 10px;background: blue;
+            position: absolute;transition: 0.2s;
+        }
+    </style>
+    <img src="../images/testimg.jpg" alt="" onmousemove="where(event)"><br>
+    <div class="doc"></div>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <script>
+        function where(e){
+            console.log("마우스 x:" + e.x +", y:"+e.y)
+            document.querySelector(".box").style.left = 20 +  e.x + "px";
+            document.querySelector(".box").style.top = 20 + e.y + "px";
+            document.querySelector(".box1").style.left = 20 +  e.x + "px";
+            document.querySelector(".box1").style.top = 20 + e.y + "px";
+
+            // const docElem = document.getElementsByClassName("doc")[0];
+            const docElem = document.querySelector(".doc");
+
+            let txt = ""
+            txt += "마우스 x:" + e.x +", y:"+e.y+"<br>";
+            txt += "이미지위 마우스 offset x:" + e.offsetX +", y:"+e.offsetY;
+
+
+            docElem.innerHTML = txt;
+
+        }
+    </script>
+
+  
+</body>
+</html>
