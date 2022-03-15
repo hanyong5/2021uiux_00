@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 100px;height: 100px;background: #f00;}
+        .imgBox{background: skyblue;}
+    </style>
+
+    <script>
+        
+
+
+        // window.onload = function(){
+        //     document.querySelector(".box").style.width = "200px"
+        // }
+
+        function box(){
+            document.querySelector(".box").style.width = "200px"
+        }
+
+        window.onload = box;
+
+        //obj.on이벤트 = 함수이름
+        //obj.on이벤트 = function(){}
+        //obj.on이벤트 = ()=>{}
+        // obj.addEventListerner("이벤트",function(){})
+        // obj.addEventListerner("이벤트",()=>{})
+        // obj.addEventListerner("이벤트",함수이름)
+
+
+    </script>
+    
+</head>
+<body >
+    <div class="box"></div>
+    <img src="../images/banana.png" alt="">
+
+    <div class="imgBox"></div>
+
+    <script>
+        const imgElem = document.querySelector("img");
+        const ibElem = document.querySelector(".imgBox");
+        //imgElem.src="../images/apple.png"
+        imgElem.onload = function(){
+
+            console.log(imgElem.width)
+            ibElem.style.width = imgElem.width+"px";
+            ibElem.style.height = imgElem.height+"px"
+        }
+
+
+
+
+    </script>
+
+
+    <form>
+        <select id="sel" onchange="changeImage()">
+            <option value="../images/apple.png">사과</option>
+            <option value="../images/banana.png">바나나</option>
+            <option value="../images/apple.png">사과</option>
+            <option value="../images/banana.png">바나나</option>
+            
+        </select><span class="size">이미지크기</span>
+    </form>
+    <img src="../images/apple.png" alt="" class="view">
+
+    <script>
+        const selElem = document.querySelector("#sel");
+        const viewElem = document.querySelector(".view");
+        const sizeElem = document.querySelector(".size");
+
+        function changeImage(){
+            let index = selElem.selectedIndex;
+            console.log(index)
+
+            viewElem.onload = function(){
+
+                sizeElem.innerHTML = viewElem.width + "X" + viewElem.height;
+           }
+            
+            console.log(selElem.options[index].value)
+            viewElem.src = selElem.options[index].value;
+
+            
+        }
+        changeImage();
+    </script>
+    
+</body>
+</html>
