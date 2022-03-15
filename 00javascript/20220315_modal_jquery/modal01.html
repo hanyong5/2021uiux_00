@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .box{display: flex;width: 500px;flex-wrap:wrap;}
+        .box .item{width: 20%;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            let num = 1;
+            $(".btn").click(function(){
+                $(".box").append(`<div class="item">test${num}</div>`);
+                num++;
+            })
+            $(".btn1").click(function(){
+                $(".box").empty()
+                num=1;
+            })
+        })
+    </script>
+</head>
+<body>
+    <button class="btn">늘리기</button><button class="btn1">전체삭제</button>
+    <div class="box">
+
+    </div>
+</body>
+</html>
