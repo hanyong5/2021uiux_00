@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+        .container{
+            width: 1240px;margin: 0 auto;
+            display: flex;
+        }
+        
+        .container .info{
+            flex-shrink: 0;
+            width:calc( 1240px / 4);
+            background: skyblue;;
+        }
+        .container .swiperWrap{width:calc( 1240px * ( 3/4 ) );overflow: hidden;}
+        .container .swiperWrap ul{display: flex;}
+        .container .swiperWrap li.basic img{width: 100%;display: block;}
+        .container .swiperWrap li.basic p{height: 310px;padding: 10px 25px;background: #eee;}
+        .container .swiperWrap li.basic{position: relative;display: flex;flex-direction: column;width: calc( 100% / 3);}
+        .container .swiperWrap li.basic:after{
+            content:"";display: block;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent  #fff transparent;
+            position: absolute;top:50%;left:50%;
+            transform:translateY(-20px)
+        }
+
+        .container .swiperWrap li.basic.change img{order:1}
+        .container .swiperWrap li.basic.change p{order:0}
+        .container .swiperWrap li.basic.change:after{
+            transform:translateY(0px) rotate(180deg)
+        }
+
+        @media screen and (max-width:768px){
+            .container{flex-direction: column;width: 100%;}
+            .container .info{width: 100%;height: 100px;}
+            .container .swiperWrap{width: 100%;}
+            .container .swiperWrap li.basic{flex-direction: row;}
+            .container .swiperWrap li.basic img{width: 50%;order:1}
+            .container .swiperWrap li.basic p{width: 50%;order:2;height: initial;}
+            .container .swiperWrap li.basic:after,
+            .container .swiperWrap li.basic.change:after{
+                transform:translateY(0px) translateX(-20px) rotate(-90deg)
+            }
+
+            .container .swiperWrap li.basic.change img{width: 50%;order:1}
+            .container .swiperWrap li.basic.change p{width: 50%;order:2}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, vitae?
+            <div class="view">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="swiperWrap">
+            <div class="mySwiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                    <li class="change swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                    <li class="swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                    <li class="change swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                    <li class="swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                    <li class="change swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                    <li class="swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                    <li class="change swiper-slide basic">
+                        <img src="../images/testimg.jpg" alt="">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad cum modi amet. Perspiciatis et quasi, ducimus maiores tempore dolorem similique.</p>
+                    </li>
+                
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          loop: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      </script>
+</body>
+</html>
