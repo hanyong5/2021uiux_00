@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="msg">
+    <div class="result"></div>
+    <script>
+        const msgElem = document.querySelector("#msg");
+        const resElem = document.querySelector(".result");
+
+        // msgElem.on이벤트이름 = function(){}
+        // msgElem.on이벤트이름 = ()=>{}
+        // msgElem.on이벤트이름 = han;
+        
+        // msgElem.addEventListener("이벤트이름",function(){})
+        // msgElem.addEventListener("이벤트이름",()=>{})
+        // msgElem.addEventListener("이벤트이름",han)
+        
+        // function han(){};
+
+        // $("선택자").이벤트이름(function(){}) //이벤트 축약형
+        // $("선택자").on("이벤트이름 이벤트이름",function(){})
+        // $("선택자").off("이벤트이름")
+       
+        window.onload = function(){
+            msgElem.focus();
+        }
+        msgElem.onfocus = function(){
+            console.log("focus입니다.");
+            resElem.innerHTML  = "포커스 이벤트발생"
+        }
+        msgElem.onblur = function(){
+            if(msgElem.value == ""){
+                alert("6자리입력해주세요");
+                //msgElem.focus();
+             }
+            
+            resElem.innerHTML  = "포커스 빠져나감"
+        }
+    </script>
+</body>
+</html>
