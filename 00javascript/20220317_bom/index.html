@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position:fixed;left:50%;top:50%;
+            transform:translate(-50%,-50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="http://www.naver.com" target="_blank">네이버</a>
+    <img src="../images/testimg.jpg" alt="" onclick="winOpen()">
+    <img src="../images/testimg.jpg" alt="" onclick="divOpen()">
+
+    <div class="box">
+        <img src="../images/testimg.jpg" alt="" onclick="divClose()">
+    </div>
+
+
+
+    <script>
+        function winOpen(){
+            window.open("http://www.naver.com")
+        }
+        function divOpen(){
+            document.querySelector(".box").style.display = "block"
+        }
+        function divClose(){
+            console.log("close");
+            document.querySelector(".box").style.display = "none";
+        }
+    </script>
+</body>
+</html>
