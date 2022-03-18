@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <style>
+        .box{
+            width: 100px;height: 100px;background: red;
+            position: relative;left:0
+        }
+    </style>
+</head>
+<body>
+    <button class="btnClick">클릭</button>
+    <button class="btnStop">멈춤</button>
+    <div class="box"></div>
+
+    <script>
+        // setTimeout("alert('test')",1000)
+        // setTimeout(function(){alert("test")},1000)
+        
+        let num = 1;
+        function test(){
+            console.log("test" + num++);
+            document.querySelector(".box").style.left = num++ +"px";
+        }
+        test();
+
+
+        let han;
+        document.querySelector(".btnClick").onclick = function(){
+            //setTimeout(test,1000);
+            han = setInterval(test,100)
+            //test();
+        } 
+
+        document.querySelector(".btnStop").onclick = function(){
+            clearInterval(han)
+        }
+
+
+    </script>
+
+
+    <div class="time"></div>
+    <script>
+        
+        // document.querySelector(".time").innerHTML = date.toLocaleTimeString();
+        function time(){
+            const date = moment();
+            document.querySelector(".time").innerHTML = date.format("hh:mm:ss");
+
+            //$(".time").html(date.format("hh:mm:ss"))
+        }
+        setInterval(time,1000);
+        time();
+    </script>
+
+    <div class="text">안녕하세요. 만나서 반갑습니다. </div>
+    <div class="sample">
+
+    </div>
+    <button class="tChan">글자이동</button>
+    <button class="tStop">글자멈춤</button>
+    <script>
+        const textElem = document.querySelector(".text");
+        let timeId;
+        
+        function rotate(){
+
+            let str = textElem.innerHTML;
+            let first = str.substr(0,1);
+            let remains = str.substr(1,str.length-1)
+            str = remains + first;
+            console.log(first)
+
+
+            textElem.innerHTML = str;
+        }
+        document.querySelector(".tChan").onclick = function(){
+            //rotate();
+            timeId = setInterval(rotate,200)
+        }
+        timeId = setInterval(rotate,200)
+        
+        document.querySelector(".tStop").onclick = function(){
+            clearInterval(timeId)
+        }
+
+
+    </script>
+</body>
+</html>
