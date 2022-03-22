@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    
+    <style>
+        html,body{height: 100%;}
+        body{
+            display: flex;justify-content: center;align-items: center;
+            flex-direction: column;
+        }
+        .panel{
+            width: 600px;height: 300px;
+            border: 1px solid #000;margin-bottom:5px;
+            position: relative;
+            
+        }
+        .car{position: absolute;left: 50px;top:120px}
+        .car.rotate{transform: rotateY(180deg);}
+        .bar{
+            width: 500px;height: 20px;background: #f00;
+            position: absolute;left:50px;top: 190px;
+        }
+        .wrap{width: 600px;display: flex;}
+        .btnStart{margin-left: auto;margin-right:5px;}
+    </style>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div class="panel">
+        <div class="bar">0~500</div>
+        <div class="car">
+            <img src="../images/car.png" alt="">
+        </div>
+    </div>
+    <div class="wrap">
+        <button class="btnStart">출발</button>
+        <button class="btnStop">정지</button>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            const bar = $(".bar");
+            const car = $(".car");
+
+            const nStart = car.position().left;
+            const nEnd =  nStart + bar.width() - car.width(); // 50 + 500 - 120 = 430
+            let nStep = 2;
+            let current = nStart;
+            let timeId;
+
+
+            function carMove(){
+                current += nStep;
+                
+                
+                if(nEnd < current){
+                    // current = nEnd
+                    // clearInterval(timeId)
+                    nStep = -2;
+                    car.addClass("rotate")
+                }
+
+                if(nStart > current){
+                    nStep = 2;
+                    car.removeClass("rotate")
+                }
+                
+                console.log(current);
+                
+                car.css("left",current)
+                
+            }
+            //carMove();
+            $(".btnStart").click(function(){
+                //timeId = setInterval(carMove,30)
+                timeId = setInterval(carMove,30)
+            })
+            $(".btnStop").click(function(){
+                clearInterval(timeId)
+            })
+
+        });
+        
+
+    </script>
+</body>
+</html>

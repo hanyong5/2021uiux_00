@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{height: 100%;}
+        body{
+            display: flex;justify-content: center;align-items: center;
+            flex-direction: column;
+
+        }
+        .box{
+            width: 500px;height: 500px;background: skyblue;
+            position: relative;
+        }
+        .car{
+            position: absolute;left: 100px;top: 100px;
+            border: 1px solid #000;
+        }
+        .wrap{background: pink;width: 500px;}
+    </style>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/car.png" alt="" class="car">
+    </div>
+    <div class="wrap">
+        자동차 이미지 크기 : <span class="carWidth">0</span><br>
+        지역위치 : <span class="carPos">0</span><br>
+        전역위치 : <span class="carOff">0</span><br>
+        화면크기 : <span class="winWidth">0</span><br>
+    </div>
+    <script>
+
+        // var init
+        let carPos ;
+        let carOff;
+        let winWidth;
+
+
+        $(window).resize(function(){
+            console.log("resize")
+            setTimeout(winResize)
+        })
+
+        function winResize(){
+            carPos = $(".car").position();
+            carOff = $(".car").offset();
+            winWidth = $(window).width();
+
+            $(".carWidth").html( "width : " + $(".car").width() + "px, height : "  + $(".car").height() + "px")
+            $(".carPos").html(`left : ${carPos.left}px, top : ${carPos.top}px`)
+            $(".carOff").html(`left : ${carOff.left}px, top : ${carOff.top}px`)
+            $(".winWidth").html(winWidth);
+        }
+
+        winResize();
+    </script>
+</body>
+</html>
