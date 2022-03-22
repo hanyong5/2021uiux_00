@@ -20,11 +20,12 @@
     <style>
         .box1{
             position: fixed;right: 0;top: 0;background:#ccc;
-            padding: 16px;
+            padding: 16px;z-index: 10;
         }
         .menu{display: flex;border: 1px solid #000;background: #fff;}
         .menu.fixed{
             position: fixed;top:0;width: 100%;
+            
         }
         .menu.fixed a{line-height: 30px;}
         .menu li{
@@ -33,6 +34,25 @@
         }
         .menu li a{display: block;line-height: 50px;transition: 0.3s;}
         .menu li:hover{flex-grow: 1.5;background: skyblue;}
+
+
+        .car1{position: absolute;left:0;transition: 0.3s;opacity: 0;}
+        .car1.move{left:200px;opacity: 1;}
+
+        .car2{position: absolute;right: 0;transform: rotateY(180deg);transition: 0.3s;opacity: 0;}
+        .car2.move{right: 200px;opacity: 1;}
+
+        .top{
+            background: skyblue;
+            width: 50px;height: 50px;
+            position: fixed;right: 20px;bottom: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;justify-content: center;align-items: center;
+            opacity: 0;transition: 0.3s;
+        }
+        .top.view{opacity: 1;}
+        
     </style>
 </head>
 <body>
@@ -80,6 +100,7 @@
         <p>037</p>
         <p>038</p>
         <p>039</p>
+        <img src="../images/car.png" alt="" class="car2">
         <p>040</p>
         <p>041</p>
         <p>042</p>
@@ -148,12 +169,28 @@
         <p>098</p>
         <p>099</p>
         <p>100</p>
+        <div class="top">top</div>
     </div>
     <script>
         const menuPos = $(".menu").offset().top;
+        const car1Pos = $(".car1").offset().top;
+        const car2Pos = $(".car2").offset().top;
+
+        console.log("car1 : "+car1Pos)
 
         $(".menuPos").html(menuPos)
 
+        // javascript
+        // window.addEventListener("scroll",function(){
+        //     let scrollY = window.pageYOffset;
+        //     const menuElem = document.querySelector(".menu");
+
+        //     if( menuPos < scrollY ){
+        //         menuElem.classList.add("fixed");
+        //     }else{
+        //         menuElem.classList.remove("fixed");
+        //     }
+        // })
 
         $(window).scroll(function(){
             //console.log("scroll")
@@ -169,6 +206,29 @@
                 $(".menu").removeClass("fixed");
             }
 
+            if(car1Pos < scrollY + 200){  // car1 1280 
+                $(".car1").addClass("move");
+            }else{
+                $(".car1").removeClass("move")
+            }
+
+
+            if(car2Pos < scrollY + 200){  // car1 1280 
+                $(".car2").addClass("move");
+            }else{
+                $(".car2").removeClass("move")
+            }
+
+            if( ( $(document).height() - $(window).height() ) / 2 < scrollY ){
+                $(".top").addClass("view")
+            }else{
+                $(".top").removeClass("view")
+            }
+
+        });
+
+        $(".top").click(function(){
+            $("html,body").animate({scrollTop:0},1000);
         })
     </script>
 
