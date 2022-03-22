@@ -32,27 +32,24 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     ?>
 	
    
+<!-- 여기만 손대세요 start -->
+
+
+
     <div id="hd_wrapper">
 
         <div id="logo">
-            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config['cf_title']; ?>"></a>
+            <a href="<?php echo G5_URL ?>"><img src="<?php echo G5_THEME_IMG_URL ?>/logo01.jpg" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
     
         
-        <ul class="hd_login">        
-            <?php if ($is_member) {  ?>
-            <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">정보수정</a></li>
-            <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
-            <?php if ($is_admin) {  ?>
-            <li class="tnb_admin"><a href="<?php echo correct_goto_url(G5_ADMIN_URL); ?>">관리자</a></li>
-            <?php }  ?>
-            <?php } else {  ?>
-            <li><a href="<?php echo G5_BBS_URL ?>/register.php">회원가입</a></li>
-            <li><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
-            <?php }  ?>
-
-        </ul>
+        
     </div>
+
+
+
+<!-- 여기만 손대세요 end -->
+
     
     <nav id="gnb">
         <h2>메인메뉴</h2>
@@ -150,6 +147,29 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 
 <hr>
+
+<? if(defined("_INDEX_")){?>
+
+<script>
+	$(function(){
+		$(".slider").bxSlider({auto:true})
+	});
+</script>
+<div class="sliderWrap">
+
+<ul class="slider">
+	<li><img src="<? echo G5_THEME_IMG_URL ?>/pc01.jpg" alt="이미지1"></li>
+	<li><img src="<? echo G5_THEME_IMG_URL ?>/pc02.jpg" alt="이미지1"></li>
+	<li><img src="<? echo G5_THEME_IMG_URL ?>/pc03.jpg" alt="이미지1"></li>
+</ul>
+
+</div>
+
+<?}?>
+
+
+
+
 
 <!-- 콘텐츠 시작 { -->
 <div id="wrapper">
