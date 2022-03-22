@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .tab{display: flex;}
+        .tab li{padding: 10px 16px;}
+        .tab li.on{background: pink;}
+        .content>div{display: none;}
+        .content>div:nth-child(1){display: block;}
+    </style>
+</head>
+<body>
+    <!-- <div style="height: 1000px;"></div> -->
+    <div class="tabWrap">
+        <ul class="tab" id="han">
+            <li class="on"><a href="#">tab01</a></li>
+            <li><a href="http://www.naver.com">tab01</a></li>
+            <li><a href="http://www.naver.com">tab01</a></li>
+        </ul>
+        <div class="content">
+            <div>1Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates quidem earum est neque accusamus totam dolor doloribus vero. Enim, sed?</div>
+            <div>2Praesentium id earum magni laborum cumque consectetur assumenda est accusamus consequuntur mollitia beatae velit quos, ipsum quisquam repudiandae ad? Consequuntur?</div>
+            <div>3Laborum, consequatur. Aliquid sunt explicabo numquam dolorum sit saepe magnam distinctio reprehenderit veniam quasi neque voluptatum nisi aliquam, delectus sapiente.</div>
+        </div>
+    </div>
+
+    <script>
+
+        //$(".content>div").hide().eq(0).show();
+
+        $(".tab a").click(function(event){
+            event.preventDefault();
+            let num = $(this).index();
+            //console.log(num)
+        });
+
+        $(".tab li").click(function(){
+            let num = $(this).index();
+            console.log(num);
+
+            $(".tab li").removeClass("on");
+            $(this).addClass("on");
+
+            $(".content>div").hide();
+            // $(".content>div").eq(num).fadeIn(1000);
+            $(".content>div").eq(num).slideDown();
+        });
+    </script>
+</body>
+</html>
