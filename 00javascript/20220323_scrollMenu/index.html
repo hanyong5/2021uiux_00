@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollMenu</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+       .scene{
+           width: 100%;height: 100vh;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-attachment: fixed;
+           display: flex;justify-content: center;align-items: center;
+       }
+       .scene.one{background-image: url(../images/pc01.jpg);}
+       .scene.two{background-image: url(../images/pc02.jpg);}
+       .scene.three{background-image: url(../images/pc03.jpg);}
+
+       .scene .viewTxt{width: 500px;color:white;text-align: center;}
+       .scene .viewTxt h2{font-size:2em;}
+       .scene .viewTxt h2:after{
+           content:"";display: block;width: 80%;height: 2px;background: #fff;
+           margin: 10px auto;
+        }
+       .menu{
+           background: white;position: fixed;
+           width: 100%;padding: 10px 16px;
+           display: flex;
+        }
+        .menuWrap{display: flex;}
+        .menuWrap a{
+            padding: 0 10px;
+            display: flex;align-items: center;
+            margin-left: 5px;
+        }
+        .menuWrap a.active{background: pink;}
+        .menuWrap a:hover{background: pink;}
+        
+
+
+       @media screen and (max-width:768px){
+        .scene .viewTxt{width: 80%;text-align:left}
+        .scene .viewTxt h2:after{margin:initial; margin-top: 16px;margin-bottom: 16px;}
+        .menuWrap{margin-left: auto;}
+       }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <h1 class="logo"><a href="#">LOGO</a></h1>
+        <div class="menuWrap">
+            <a href="#v01" class="active">MENU01</a>
+            <a href="#v02" >MENU02</a>
+            <a href="#v03" >MENU03</a>
+        </div>
+    </nav>
+    <section class="scene one" id="v01">
+        <div class="viewTxt">
+            <h2>#1 Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quos aperiam odit, distinctio voluptas minus magni rerum dicta iste accusamus temporibus ea voluptate illum praesentium error vero cupiditate! Sed, deserunt!</p>
+        </div>
+    </section>
+    <section class="scene two"  id="v02">
+        <div class="viewTxt">
+            <h2>#2 Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quos aperiam odit, distinctio voluptas minus magni rerum dicta iste accusamus temporibus ea voluptate illum praesentium error vero cupiditate! Sed, deserunt!</p>
+        </div>
+    </section>
+    <section class="scene three"  id="v03">
+        <div class="viewTxt">
+            <h2>#3 Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quos aperiam odit, distinctio voluptas minus magni rerum dicta iste accusamus temporibus ea voluptate illum praesentium error vero cupiditate! Sed, deserunt!</p>
+        </div>
+    </section>
+
+    <script>
+        //#1
+        const oneTop = $("#v01").offset().top;
+        const twoTop = $("#v02").offset().top;
+        const threeTop = $("#v03").offset().top;
+
+        console.log(oneTop+", "+twoTop+", "+threeTop)
+
+        $(".menuWrap a").eq(0).click(function(e){
+            console.log($(this).index())
+            e.preventDefault(); //a tag href 이동을 제거
+            $(".menuWrap a").removeClass("active"); // a 전체 active 제거
+            $(this).addClass("active") // 자신만 active추가
+            $("html,body").animate({scrollTop:oneTop});
+        })
+        $(".menuWrap a").eq(1).click(function(e){
+            console.log($(this).index())
+            e.preventDefault();
+            $(".menuWrap a").removeClass("active"); // a 전체 active 제거
+            $(this).addClass("active") // 자신만 active추가
+            $("html,body").animate({scrollTop:twoTop})
+        })
+        $(".menuWrap a").eq(2).click(function(e){
+            console.log($(this).index())
+            e.preventDefault();
+            $(".menuWrap a").removeClass("active"); // a 전체 active 제거
+            $(this).addClass("active") // 자신만 active추가
+            $("html,body").animate({scrollTop:threeTop})
+        })
+
+        $(window).scroll(function(){
+            let scrollY = $(window).scrollTop();
+            console.log(scrollY)
+
+            if(oneTop <= scrollY){
+                $(".menuWrap a").removeClass("active").eq(0).addClass("active")
+            }
+            if(twoTop <= scrollY){
+                $(".menuWrap a").removeClass("active").eq(1).addClass("active")
+            }
+            if(threeTop <= scrollY){
+                $(".menuWrap a").removeClass("active").eq(2).addClass("active")
+            }
+        })
+        
+    </script>
+</body>
+</html>
