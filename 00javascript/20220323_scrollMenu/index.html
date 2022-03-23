@@ -79,9 +79,9 @@
 
     <script>
         //#1
-        const oneTop = $("#v01").offset().top;
-        const twoTop = $("#v02").offset().top;
-        const threeTop = $("#v03").offset().top;
+        let oneTop = $("#v01").offset().top;
+        let twoTop = $("#v02").offset().top;
+        let threeTop = $("#v03").offset().top;
 
         console.log(oneTop+", "+twoTop+", "+threeTop)
 
@@ -107,19 +107,38 @@
             $("html,body").animate({scrollTop:threeTop})
         })
 
-        $(window).scroll(function(){
-            let scrollY = $(window).scrollTop();
-            console.log(scrollY)
+        
+        function view(){
+                $(window).scroll(function(){
+                    let scrollY = $(window).scrollTop();
+                    console.log(scrollY)
 
-            if(oneTop <= scrollY){
-                $(".menuWrap a").removeClass("active").eq(0).addClass("active")
-            }
-            if(twoTop <= scrollY){
-                $(".menuWrap a").removeClass("active").eq(1).addClass("active")
-            }
-            if(threeTop <= scrollY){
-                $(".menuWrap a").removeClass("active").eq(2).addClass("active")
-            }
+                    if(oneTop <= scrollY){
+                        $(".menuWrap a").removeClass("active").eq(0).addClass("active")
+                    }
+                    if(twoTop <= scrollY){
+                        $(".menuWrap a").removeClass("active").eq(1).addClass("active")
+                    }
+                    if(threeTop <= scrollY){
+                        $(".menuWrap a").removeClass("active").eq(2).addClass("active")
+                    }
+                })
+       }
+       view();
+
+
+        $(window).resize(function(){
+            oneTop = $("#v01").offset().top;
+            twoTop = $("#v02").offset().top;
+            threeTop = $("#v03").offset().top;
+
+
+            view();
+
+            
+
+
+
         })
         
     </script>
