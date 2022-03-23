@@ -83,7 +83,7 @@
         let twoTop = $("#v02").offset().top;
         let threeTop = $("#v03").offset().top;
 
-        console.log(oneTop+", "+twoTop+", "+threeTop)
+        
 
         $(".menuWrap a").eq(0).click(function(e){
             console.log($(this).index())
@@ -109,6 +109,8 @@
 
         
         function view(){
+
+            
                 $(window).scroll(function(){
                     let scrollY = $(window).scrollTop();
                     console.log(scrollY)
@@ -131,6 +133,9 @@
             oneTop = $("#v01").offset().top;
             twoTop = $("#v02").offset().top;
             threeTop = $("#v03").offset().top;
+
+
+            console.log(oneTop+", "+twoTop+", "+threeTop)
 
 
             view();
