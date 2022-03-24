@@ -85,67 +85,72 @@
 
         
 
-        $(".menuWrap a").eq(0).click(function(e){
-            console.log($(this).index())
-            e.preventDefault(); //a tag href 이동을 제거
-            $(".menuWrap a").removeClass("active"); // a 전체 active 제거
-            $(this).addClass("active") // 자신만 active추가
-            $("html,body").animate({scrollTop:oneTop});
-        })
-        $(".menuWrap a").eq(1).click(function(e){
-            console.log($(this).index())
+        // $(".menuWrap a").eq(0).click(function(e){
+        //     console.log($(this).index())
+        //     e.preventDefault(); //a tag href 이동을 제거
+        //     $(".menuWrap a").removeClass("active"); // a 전체 active 제거
+        //     $(this).addClass("active") // 자신만 active추가
+        //     $("html,body").animate({scrollTop:oneTop});
+        // })
+        // $(".menuWrap a").eq(1).click(function(e){
+        //     console.log($(this).index())
+        //     e.preventDefault();
+        //     $(".menuWrap a").removeClass("active"); // a 전체 active 제거
+        //     $(this).addClass("active") // 자신만 active추가
+        //     $("html,body").animate({scrollTop:twoTop})
+        // })
+        // $(".menuWrap a").eq(2).click(function(e){
+        //     console.log($(this).index())
+        //     e.preventDefault();
+        //     $(".menuWrap a").removeClass("active"); // a 전체 active 제거
+        //     $(this).addClass("active") // 자신만 active추가
+        //     $("html,body").animate({scrollTop:threeTop})
+        // })
+
+        // #2
+        // $(".menuWrap a").click(function(e){
+        //     e.preventDefault();
+        //     console.log($(this).index());
+        //     let i = $(this).index();
+        //     let st = $(".scene").eq(i).offset().top;
+        //     $("html,body").animate({scrollTop:st},300)
+        // })
+
+
+        // #3
+        $(".menuWrap a").click(function(e){
             e.preventDefault();
-            $(".menuWrap a").removeClass("active"); // a 전체 active 제거
-            $(this).addClass("active") // 자신만 active추가
-            $("html,body").animate({scrollTop:twoTop})
-        })
-        $(".menuWrap a").eq(2).click(function(e){
-            console.log($(this).index())
-            e.preventDefault();
-            $(".menuWrap a").removeClass("active"); // a 전체 active 제거
-            $(this).addClass("active") // 자신만 active추가
-            $("html,body").animate({scrollTop:threeTop})
+            //console.log($(this.hash))
+            let target = $(this.hash)
+            let st = target.offset().top;
+            console.log(st)
+            $("html,body").animate({scrollTop:st},300)
         })
 
-        
-        function view(){
-
-            
-                $(window).scroll(function(){
-                    let scrollY = $(window).scrollTop();
-                    console.log(scrollY)
-
-                    if(oneTop <= scrollY){
-                        $(".menuWrap a").removeClass("active").eq(0).addClass("active")
-                    }
-                    if(twoTop <= scrollY){
-                        $(".menuWrap a").removeClass("active").eq(1).addClass("active")
-                    }
-                    if(threeTop <= scrollY){
-                        $(".menuWrap a").removeClass("active").eq(2).addClass("active")
-                    }
-                })
-       }
-       view();
-
-
-        $(window).resize(function(){
-            oneTop = $("#v01").offset().top;
-            twoTop = $("#v02").offset().top;
-            threeTop = $("#v03").offset().top;
-
-
-            console.log(oneTop+", "+twoTop+", "+threeTop)
-
-
-            view();
-
-            
 
 
 
-        })
-        
+
+
+
+    $(window).scroll(function () {
+        let scrollY = $(window).scrollTop();
+        console.log(scrollY)
+
+        if (oneTop <= scrollY) {
+            $(".menuWrap a").removeClass("active").eq(0).addClass("active")
+        }
+        if (twoTop <= scrollY) {
+            $(".menuWrap a").removeClass("active").eq(1).addClass("active")
+        }
+        if (threeTop <= scrollY) {
+            $(".menuWrap a").removeClass("active").eq(2).addClass("active")
+        }
+    })
+
+
+
+       
     </script>
 </body>
 </html>
