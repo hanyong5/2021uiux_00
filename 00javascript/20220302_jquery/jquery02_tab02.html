@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .menu{display: flex;}
+        .menu>li.on{background: skyblue;}
+        .menu>li:hover{background: skyblue;}
+
+        .box>div{display: none;}
+        .box>div:nth-child(1){display: block;}
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li class="on">menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+    </ul>
+    <div class="box">
+        <div>1Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, molestias.</div>
+        <div>2Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, molestias.</div>
+        <div>3Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, molestias.</div>
+    </div>
+
+    <script>
+        $(".menu li").eq(0).click(function(){
+            $(".box div").hide();
+            $(".menu li").removeClass("on");
+
+            $(".menu li").eq(0).addClass("on")
+            $(".box div").eq(0).show();
+        })
+        $(".menu li").eq(1).click(function(){
+            $(".box div").hide();
+            $(".menu li").removeClass("on");
+
+            $(".menu li").eq(1).addClass("on")
+            $(".box div").eq(1).show();
+        })
+        $(".menu li").eq(2).click(function(){
+            $(".box div").hide();
+            $(".menu li").removeClass("on");
+
+            $(".menu li").eq(2).addClass("on")
+            $(".box div").eq(2).show();
+        })
+    </script>
+
+</body>
+</html>
