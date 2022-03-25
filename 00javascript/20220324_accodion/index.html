@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+        .submenu{display: none;}
+
+        body{display: flex;justify-content: center;align-items: center;}
+        .menuWrap{width: 200px;_background: pink;}
+        ul.menu>li{_background: red;border: 1px solid #fff;}
+        /* ul.menu>li:hover .submenu{display: block;} */
+        ul.menu>li>a{
+            display: flex;justify-content: space-between;
+            height: 100%;
+            align-items: center;padding: 0 16px;
+            height: 35px;background: #ddd;
+        }
+        ul.menu>li>a i{transition: 0.3s;}
+        ul.menu>li>a.active i{transform:rotate(45deg)}
+
+        .submenu a{display: block;text-align: center;line-height: 30px;}
+        .submenu{padding: 16px 0;}
+    </style>
+</head>
+<body>
+    <div class="menuWrap">
+        <ul class="menu">
+            <li>
+                <a href="http://www.naver.com">menu01 <i class="fa-solid fa-plus"></i></a>
+                <ul class="submenu">
+                    <li><a href="http://www.daum.net">submenu01_01</a></li>
+                    <li><a href="#">submenu01_02</a></li>
+                    <li><a href="#">submenu01_03</a></li>
+                    <li><a href="#">submenu01_04</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu02 <i class="fa-solid fa-plus"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">submenu02_01</a></li>
+                    <li><a href="#">submenu02_02</a></li>
+                    <li><a href="#">submenu02_03</a></li>
+                    <li><a href="#">submenu02_04</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">menu03 <i class="fa-solid fa-plus"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">submenu03_01</a></li>
+                    <li><a href="#">submenu03_02</a></li>
+                    <li><a href="#">submenu03_03</a></li>
+                    <li><a href="#">submenu03_04</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const menuElem = $(".menu>li>a");
+
+        menuElem.click(function(e){
+            e.preventDefault();
+
+            menuElem.parent().find(".submenu").hide();
+            if( $(this).hasClass("active") ){
+                $(this).parent().find(".submenu").hide();
+                $(this).removeClass("active")
+            }else{
+                $(this).parent().find(".submenu").show();
+                menuElem.removeClass("active")
+                $(this).addClass("active")
+            }
+            
+           
+        })
+    </script>
+</body>
+</html>
