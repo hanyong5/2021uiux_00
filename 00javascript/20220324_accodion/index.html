@@ -68,18 +68,19 @@
         menuElem.click(function(e){
             e.preventDefault();
 
-            menuElem.parent().find(".submenu").hide();
-            if( $(this).hasClass("active") ){
-                $(this).parent().find(".submenu").hide();
-                $(this).removeClass("active")
-            }else{
-                $(this).parent().find(".submenu").show();
-                menuElem.removeClass("active")
-                $(this).addClass("active")
+            menuElem.parent().find(".submenu").hide();// 5
+            if( $(this).hasClass("active") ){ // 2
+                $(this).parent().find(".submenu").hide(); // 3
+                $(this).removeClass("active") // 3
+            }else{ // 2
+                $(this).parent().find(".submenu").show(); // 1
+                menuElem.removeClass("active") // 4
+                $(this).addClass("active") // 1
             }
             
            
         })
+        
     </script>
 </body>
 </html>
