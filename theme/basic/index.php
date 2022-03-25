@@ -14,16 +14,16 @@ if(G5_COMMUNITY_USE === false) {
 
 include_once(G5_THEME_PATH.'/head.php');
 ?>
-<script>
-	$(function(){
-		$(".slider").bxSlider()
-	});
-</script>
-<ul class="slider">
-	<li><img src="<? echo G5_THEME_IMG_URL ?>/pc01.jpg" alt="이미지1"></li>
-	<li><img src="<? echo G5_THEME_IMG_URL ?>/pc02.jpg" alt="이미지1"></li>
-	<li><img src="<? echo G5_THEME_IMG_URL ?>/pc03.jpg" alt="이미지1"></li>
-</ul>
+
+
+   <div >
+        <?php
+        // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
+        // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
+        // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
+        echo latest('theme/myskin', 'bbs01', 4, 24);
+        ?>
+    </div>
 
 <?php
 include_once(G5_THEME_PATH.'/tail.php');
