@@ -34,3 +34,7 @@
 @media screen and (max-width:568px){
     .content-1s .card img{height: 100px;}
 }
+
+@media screen and (min-width:600px){
+    .customer .sliderView{flex-direction: column;}
+}
