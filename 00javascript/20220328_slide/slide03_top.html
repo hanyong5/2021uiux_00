@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .wrapper li img{width: 100%;}
+        .wrapper{
+            width: 700px;height: 280px;margin: 0 auto;
+            overflow: hidden;
+       }
+        .wrapper ul{width: 100%;position: relative;height: 280px;}
+        .wrapper li{position: absolute;width: 100%;height: 100%;top: 100%;}
+        .wrapper li:first-child{top: 0; }
+    </style>
+</head>
+<body>
+    <div class="wrapper" >
+        <ul>
+            <li><img src="../images/images01.jpg" alt=""></li>
+            <li><img src="../images/images02.jpg" alt=""></li>
+            <li><img src="../images/images03.jpg" alt=""></li>
+            <li><img src="../images/images04.jpg" alt=""></li>
+            <li><img src="../images/images05.jpg" alt=""></li>
+
+        </ul>
+     </div>
+     <script>
+        //  $(".wrapper li").eq(0).css("left",0).stop().animate({left:"-100%"},1000);
+        //  $(".wrapper li").eq(1).css("left","100%").stop().animate({left:0},1000)
+
+        let num = 0;
+        let viewTop=0;
+        function slider(){
+            $(".wrapper li").eq(num).css("top",0).stop().animate({top:"-100%"},1000)
+            num++;
+            if(num == 5){num = 0}
+            $(".wrapper li").eq(num).css({top:"100%"}).stop().animate({top:0},1000)
+        }
+        slider();
+        setInterval(slider,3000);
+     </script>
+</body>
+</html>
