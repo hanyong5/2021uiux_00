@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <style>
+          .lazy-load{transform: translateY(100px);transition:1s;opacity: 0;}
+        .lazy-load.fade{transform: translateY(0);opacity: 1}
+    </style>
    
 
 </head>
@@ -113,7 +117,7 @@
             </div>
         </div>
     </div>
-    <div class="portfolio">
+    <div class="portfolio lazy-load">
         <div class="container">
             <h3 class="text-center afterBar">PORTFOLIO</h3>
             <P class="text-center mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, iste?</P>
@@ -156,7 +160,7 @@
         </div>
     </div>
 
-    <div class="customer">
+    <div class="customer lazy-load">
         <div class="container">
             <h3 class="text-center afterBar">CUSTOMER</h3>
             <P class="text-center mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, iste?</P>
@@ -209,7 +213,7 @@
     </div>
 
 
-    <div class="com">
+    <div class="com lazy-load">
         <div class="container">
             <div class="owl-carousel owl-theme owl-loaded" id="owlSlider2">
                 <img src="assets/servicos/1.jpg" alt="">
@@ -226,7 +230,7 @@
             </div>
         </div>
     </div>
-    <footer class="bg-dark">
+    <footer class="bg-dark lazy-load">
         <div class="container">
             <div class="row py-5">
                 <div class="col-md-6 text-center text-white text-md-start pb-3 pb-md-0">
@@ -302,6 +306,18 @@
                 1000:{items:4},
             }
         })
+
+
+        const lazyLoad = document.querySelectorAll(".lazy-load"); // 모든 이미지 파일 선택
+        window.addEventListener("scroll", (event) => { 
+        lazyLoad.forEach((view) => { // 각 이미지마다
+            console.log("Scrolling...");
+            const rect = view.getBoundingClientRect().top;
+            if (rect <= window.innerHeight) { // 이미지가 보일 타이밍을 계산
+                view.classList.add("fade"); // 트랜지션 추가
+            }
+        });
+        });
 
     </script>
 
