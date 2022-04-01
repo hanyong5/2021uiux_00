@@ -54,16 +54,18 @@
         });
 
         $(".prev").click(function () {
+                if (overBtn == true) {
+                    overBtn = false;
+                    $(".wrapper li").eq(current).css("left", 0).stop().animate({ left: "100%" }, 1000);
 
-            $(".wrapper li").eq(current).css("left", 0).stop().animate({ left: "100%" }, 1000);
+                    current--;
+                    if (current < 0) { current = liNum - 1 }
 
-            current--;
-            if (current < 0) { current = liNum - 1 }
+                    $(".wrapper li").eq(current).css({ left: "-100%" }).stop().animate({ left: 0 }, 1000, function () { overBtn = true })
 
-            $(".wrapper li").eq(current).css({ left: "-100%" }).stop().animate({ left: 0 }, 1000)
-
-            console.log(current)
-        })
+                    console.log(current)
+                }
+            })
 
     //   setInterval(nextTrigger,3000);
     //   setTimeout(nextTrigger,0)
