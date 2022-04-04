@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        html,body{height: 100%;}
+        .wrapper ul{position: relative;}
+        .wrapper li{
+            width: 100vw;height: 100vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: absolute;left: 100%;
+            display: flex;justify-content: center;
+            align-items: center;
+        }
+        .wrapper{
+            width: 100vw;height: 100vh;
+            overflow: hidden;
+       }
+        .wrapper li:first-child{left: 0; }
+
+        .etcWrap{position: absolute;left:50%;bottom: 100px;transform: translateX(-50%);}
+        .pager{display: flex;}
+        .pager span{
+            display:block;width: 15px;height: 15px;border-radius: 10px;background:#ddd;
+            text-indent: -9999px;cursor: pointer;margin-right:6px;
+        }
+        .pager span:hover{background: #333;}
+        .pager span.active{background: red;}
+    </style>
+</head>
+<body>
+    <div class="wrapper" >
+        <ul class="slide">
+            <li style="background-image: url(../images/pc01.jpg)">
+                <h3>Lorem, ipsum dolor.</h3>
+            </li>
+            <li style="background-image: url(../images/pc02.jpg)">
+                <h3>Lorem, ipsum dolor.</h3>
+            </li>
+            <li style="background-image: url(../images/pc03.jpg)">
+                <h3>Lorem, ipsum dolor.</h3>
+            </li>
+            
+        </ul>
+        <div class="etcWrap">
+            <div>
+                <span class="prev">prev</span> <span class="next">next</span>
+            </div>
+            <div class="pager">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+        </div>
+     </div>
+     <script>
+      let current = 0;
+      let nextCurrent = 0;
+      const banner = $(".slide>li");
+      const banCount = banner.length;
+      const pager = $(".pager>span");
+      let overBtn = true;
+
+
+      $(".next").click(function () {
+            if (overBtn == true) {
+                overBtn = false;
+                nextCurrent = current + 1;
+                if (nextCurrent == banCount) { nextCurrent = 0 }
+                slider("next");
+            }
+        })
+        $(".prev").click(function () {
+            if (overBtn == true) {
+                overBtn = false;
+                nextCurrent = current - 1;
+                if (nextCurrent < 0) { nextCurrent = banCount - 1 }
+                slider("prev");
+            }
+        })
+
+        function slider(view) {
+            pager.removeClass("active").eq(nextCurrent).addClass("active");
+
+            if (view == "next") {
+                banner.eq(current).css({ left: 0 }).stop().animate({ left: "-100%" }, 500);
+                banner.eq(nextCurrent).css({ left: "100%" }).stop().animate({ left: 0 }, 500, function () { overBtn = true });
+            } else {
+                banner.eq(current).css({ left: 0 }).stop().animate({ left: "100%" }, 500);
+                banner.eq(nextCurrent).css({ left: "-100%" }).stop().animate({ left: 0 }, 500, function () { overBtn = true });
+            }
+            current = nextCurrent;
+
+        }
+
+        pager.click(function(){
+            nextCurrent = $(this).index();
+            slider("next");
+        });
+
+        // setInterval(trigger,3000)
+        // function trigger(){
+        //     $(".next").trigger("click");
+        // }
+
+        $(window).mousewheel(function(event,delta){
+            console.log(delta)
+            if(delta<0){
+                $(".next").trigger("click");
+            }else{
+                $(".prev").trigger("click");
+            }
+        })
+
+      
+      
+     </script>
+</body>
+</html>
