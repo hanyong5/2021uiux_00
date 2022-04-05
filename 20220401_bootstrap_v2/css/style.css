@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 .navbar .bg-color{
     position: absolute;
     width: 100%;height: 600px;
@@ -18,3 +19,23 @@
 }
 
 .bg-banner1{background-color: #00CCCC !important;}
+
+.banner .card{
+    border-radius: 10px;overflow: hidden;
+    box-shadow: var(--box-shadow1);
+}
+
+.adven .icon{
+    width: 80px;height: 80px;border-radius: 50%;background: #fff;
+    box-shadow: var(--box-shadow1);
+}
+.adven .img-view{height: 400px;}
+
+.adven .img-view img{border-radius: 5px;box-shadow: var(--box-shadow1);}
+.adven .img1st{max-width:400px;right: 2rem;top: 1.5rem;}
+.adven .img2st{max-width:300px;left: 2rem;bottom: 1.5rem;}
+
+.contact{
+    background: url(../images/contact-cover.jpg) no-repeat center;
+    background-size: cover;
+}
