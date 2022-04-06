@@ -39,3 +39,7 @@
     background: url(../images/contact-cover.jpg) no-repeat center;
     background-size: cover;
 }
+
+
+.lazy-load{transform: translateY(100px);transition:1s;opacity: 0;}
+.lazy-load.fade{transform: translateY(0);opacity: 1}

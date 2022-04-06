@@ -155,7 +155,7 @@
           </div>
     </div>
 
-    <div class="container banner">
+    <div class="container banner lazy-load">
         <div class="row mb-3">
             <div class="col-md-6 col-lg-4 mb-2 mb-md-0" onclick="location.href='http://www.naver.com'">
                 <div class="card">
@@ -233,7 +233,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5 adven">
+    <div class="container my-5 adven lazy-load">
         <h3 class="text-center my-3">The Udacity Advantage</h3>
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center order-2 px-5 order-lg-1 align-items-center align-items-lg-start">
@@ -252,7 +252,7 @@
         </div>
     </div>
 
-    <div class="contact py-5">
+    <div class="contact py-5 lazy-load">
         <div class="container py-5">
             <div class="row text-white text-center">
                 <div class="col-md-6 offset-md-3">
@@ -266,7 +266,7 @@
         </div>
     </div>
 
-    <footer class="footer py-5">
+    <footer class="footer py-5 lazy-load">
         <div class="container px-5">
             <div class="row">
                 <div class="col-lg-3 mb-4">
@@ -379,6 +379,20 @@
         },function(){
             $(".card-img").addClass("moon")
         })
+
+
+
+
+        const lazyLoad = document.querySelectorAll(".lazy-load"); // 모든 이미지 파일 선택
+        window.addEventListener("scroll", (event) => { 
+        lazyLoad.forEach((view) => { // 각 이미지마다
+            console.log("Scrolling...");
+            const rect = view.getBoundingClientRect().top;
+            if (rect <= window.innerHeight) { // 이미지가 보일 타이밍을 계산
+                view.classList.add("fade"); // 트랜지션 추가
+            }
+        });
+        });
     </script>
   </body>
 </html>
