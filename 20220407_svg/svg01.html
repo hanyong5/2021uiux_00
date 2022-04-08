@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .cir01 {
+            fill: #fff;
+            stroke: #000000;
+            stroke-width:2;
+            stroke-dasharray: 265;
+            stroke-dashoffset: 265;
+            animation:circle 1s alternate linear forwards;
+            transform:scaleY(0);transform-origin: 50px 50px;
+        }
+
+        @keyframes circle {
+            /* from{stroke-dashoffset: 0;} */
+            to{stroke-dashoffset: 0;fill:#f00;transform:scaleY(1)}
+        }
+
+        .box,.box1{
+            width: 200px;height: 200px;background: skyblue;
+            display: flex;align-items: center;justify-content: center;
+        }
+
+
+        .line1 {
+                    fill: #0f0;
+                    stroke: #000000;
+                    stroke-width:40;
+                    _stroke-linecap: round;
+                    stroke-dasharray: 265;
+                    stroke-dashoffset: 265;
+                    animation: lineAni 1s alternate forwards;
+                    transform: translate(25px,25px);
+                    
+                }
+
+        @keyframes lineAni {
+            to{stroke-dashoffset: 200;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <svg id="Layer_1" x="0px" y="0px"  >
+            <circle class="cir01" cx="50" cy="50" r="42.2" />
+        </svg>
+    </div>
+
+    <div class="box1">
+        <svg  x="0px" y="0px" viewBox="0 0 200 200" width="100">
+            <path class="line1" d="M71.3,13.6c11.5,7.2,20.8,22,20.8,36.4c0,23.3-18.9,42.2-42.2,42.2S7.8,73.3,7.8,50S26.7,7.8,50,7.8
+        	C57.8,7.8,65.1,9.9,71.3,13.6" />
+        </svg>
+    </div>
+
+    <div class="box2">
+        <svg x="0px" y="0px" viewBox="0 0 100 100">
+            <style type="text/css">
+                .st0 {
+                    fill: #ED2024;
+                }
+                .line2{
+                    fill:#0f0;
+                    stroke: #000;
+
+                }
+            </style>
+            <g>
+                <circle class="st0" cx="50" cy="50" r="39.1" />
+                <path class="line2" d="M50,11.4c21.3,0,38.6,17.3,38.6,38.6S71.3,88.6,50,88.6S11.4,71.3,11.4,50S28.7,11.4,50,11.4 M50,10.4
+    		c-21.9,0-39.6,17.7-39.6,39.6S28.1,89.6,50,89.6S89.6,71.9,89.6,50S71.9,10.4,50,10.4L50,10.4z" />
+            </g>
+        </svg>
+    </div>
+
+
+    
+</body>
+</html>

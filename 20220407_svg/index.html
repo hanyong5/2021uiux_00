@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 500px;background: skyblue;}
+        .box1{width: 400px;height: 400px;background-image: url(star.svg);}
+        .box2{width: 200px;height: 200px;background: pink;}
+
+        .box2 .st0 {
+                    fill: #0ff;
+                    stroke: #f00;
+                    stroke-width:1;
+                    stroke-dasharray: 528px;
+                    stroke-dashoffset: 528px;
+                    _animation:starAni 2s alternate  forwards;
+                    opacity: 0;
+                    transition:0.3s
+                    
+                }
+
+            @keyframes starAni{
+                
+                to{stroke-dashoffset: 0px;}
+            }
+
+        .box2:hover .st0{animation:starAni 2s alternate  forwards;opacity: 1;}
+
+
+
+
+    </style>
+</head>
+<body>
+    <img src="star.svg" alt="">
+    <div class="box">
+        <img src="star.svg" alt="">
+    </div>
+    <div class="box1">
+
+    </div>
+    <div class="box2">
+        <svg width="200" height="200">
+            <polygon class="st0" points="100,28.3 123.3,75.5 175.4,83.1 137.7,119.8 146.6,171.7 100,147.2 53.4,171.7 62.3,119.8 24.6,83.1 
+    	76.7,75.5 " />
+        </svg>
+    </div>
+</body>
+</html>
