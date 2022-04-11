@@ -7,10 +7,10 @@ a:link,a:visited{text-decoration: none;color:#333}
 
 
 #wrap{width: 1200px;margin: 0 auto}
-#header{height: 100px;background: pink;padding: 30px 0;padding-right: 20px;}
+#header{height: 100px;background: pink;padding: 30px 0;padding-right: 20px;position: relative;z-index: 10;}
 #header h1.logo{width: 200px;height: 40px;float: left;background: skyblue;}
 #header nav.nav{ float: right;}
-#header .menu>li{float: left;width: 150px;background: skyblue;}
+#header .menu>li{float: left;width: 150px;background: skyblue;position: relative;}
 #header .menu>li>a{display: block;line-height: 40px;text-align: center;}
 
 
@@ -20,10 +20,26 @@ a:link,a:visited{text-decoration: none;color:#333}
 
 
 
-#header .menu .submenu{display: none;background: skyblue;}
+#header .menu .submenu{display: none;background: skyblue;position: absolute;width: 100%;}
 /* #header .menu>li:first-child .submenu{display: block;} */
 
 #header .submenu li a{display: block;line-height: 40px;text-align: center;}
 #header .submenu li a:hover{background: red;}
 
 /* #header .menu>li:hover .submenu{display: block;} */
+
+
+/* slider left */
+/* #slider{position: relative;overflow: hidden;width: 1200px;height: 480px;}
+#slider .slide{position: absolute;display: flex;left:0;width: 400%;}
+#slider .slide .slide_item{display: flex;justify-content: center;align-items: center;width: 1200px;}
+#slider .slide .slide_item h2{position: absolute;background: skyblue;padding: 10px 30px ;border-radius: 5px;}
+#slider .slide .slide_item img{width: 100%;} */
+
+
+/* slide up */
+#slider{position: relative;width: 1200px;height: 480px;overflow: hidden;}
+#slider .slide{position: absolute;top:0;}
+#slider .slide .slide_item{display: flex;justify-content: center;align-items: center;width: 1200px;}
+#slider .slide .slide_item h2{position: absolute;background: skyblue;padding: 10px 30px ;border-radius: 5px;}
+#slider .slide .slide_item img{width: 100%;}
