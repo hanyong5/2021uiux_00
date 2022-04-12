@@ -38,8 +38,15 @@ a:link,a:visited{text-decoration: none;color:#333}
 
 
 /* slide up */
-#slider{position: relative;width: 1200px;height: 480px;overflow: hidden;}
+/* #slider{position: relative;width: 1200px;height: 480px;overflow: hidden;}
 #slider .slide{position: absolute;top:0;}
 #slider .slide .slide_item{display: flex;justify-content: center;align-items: center;width: 1200px;}
+#slider .slide .slide_item h2{position: absolute;background: skyblue;padding: 10px 30px ;border-radius: 5px;}
+#slider .slide .slide_item img{width: 100%;} */
+
+/* fade  */
+#slider{position: relative;width: 1200px;height: 480px;}
+#slider .slide{position: absolute;top:0;}
+#slider .slide .slide_item{display: flex;justify-content: center;align-items: center;width: 1200px;position: absolute;}
 #slider .slide .slide_item h2{position: absolute;background: skyblue;padding: 10px 30px ;border-radius: 5px;}
 #slider .slide .slide_item img{width: 100%;}

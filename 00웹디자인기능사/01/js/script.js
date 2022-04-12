@@ -16,6 +16,7 @@ $(".menu>li").mouseleave(function(){
 // })
 
 let num = 0;
+let depth = 0
 // function slideLeft(){
 //     num++;
 //     if(num == 4){
@@ -27,14 +28,27 @@ let num = 0;
 // }
 
 
-function slideUp(){
+// function slideUp(){
+//     num++;
+//     if(num == 4){
+//         num=1;
+//         $(".slide").css("top",0)
+//     }
+//     console.log(num)
+//     $(".slide").animate({"top":-100*num+"%"},1000)
+// }
+
+
+function slideFade(){
     num++;
+    depth++;
     if(num == 4){
         num=1;
         $(".slide").css("top",0)
     }
     console.log(num)
-    $(".slide").animate({"top":-100*num+"%"},1000)
+    $(".slide .slide_item").eq(num).css({opacity:0,"z-index":depth}).stop().animate({opacity:1},1000)
+    
 }
 
-setInterval(slideUp,3000)
+setInterval(slideFade,3000)
