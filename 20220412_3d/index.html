@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{
+            width: 500px;height: 500px;background: #ddd;
+            display: flex;justify-content: center;align-items: center;
+            perspective: 300px;
+        }
+        .card{
+            width: 100px;height: 160px;
+            transform: rotateY(0deg);transition: 0.3s;
+            transform-origin: center;
+            position: relative;
+            font-size: 50px;color:white;
+            _backface-visibility: hidden;
+            
+            transform-style: preserve-3d;
+            transform:translate3d(0,0,-100px) rotateY(0deg);
+            
+            
+        }
+        .box:hover .card{
+            transform:translate3d(0,0,200px) rotateY(-180deg);
+        }
+
+        .card div{
+            width: 100%;height: 100%;
+            position: absolute;backface-visibility: hidden;
+            display: flex;justify-content: center;align-items: center;border-radius: 20px;
+        }
+
+        .card .front{
+            background: red;z-index:1;
+            
+        }
+        .card .back{
+            background: green;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="card">
+            <div class="front">10</div>
+            <div class="back">web</div>
+        </div>
+    </div>
+</body>
+</html>
