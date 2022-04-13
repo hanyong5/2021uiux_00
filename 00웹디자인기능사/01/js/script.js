@@ -52,3 +52,16 @@ function slideFade(){
 }
 
 setInterval(slideFade,3000)
+
+
+
+//tab menu
+$(".tab > div").click(function(e){
+    e.preventDefault();
+    let i = $(this).index()
+    console.log("tab = "+i);
+    $(".tab>div").removeClass("active");
+    $(this).addClass("active");
+
+    $(".content > ul").hide().eq(i).fadeIn()
+})
