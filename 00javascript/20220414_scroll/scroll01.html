@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        html,body{height: 100%;}
+        body{height: 300%;}
+        .bar{
+            width: 300px;height: 20px;background: red;
+            position: fixed;bottom:100px;
+            left:50%
+        }
+        .rate{width: 0;height: 100%;background: blue;}
+        .box{
+            width: 100px;height: 100px;
+            background: skyblue;
+            position: fixed;
+            left:50%;top:50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <div class="rate"></div>
+    </div>
+
+    <div class="box"></div>
+
+    <script>
+        // 1. rate dom
+        // 2. scroll value
+
+        let rateElem = document.querySelector(".rate");
+        let maxScroll = document.body.offsetHeight - window.innerHeight;
+        
+
+        window.addEventListener("scroll",function(){
+            // console.log(window.pageYOffset)
+            let rate = window.pageYOffset / maxScroll
+            console.log(rate)
+            rateElem.style.width = rate * 100 + "%";
+            document.querySelector(".box").style.opacity = rate;
+            document.querySelector(".box").style.transform = `translate(-50%,-50%) rotate(${rate*360}deg)`;
+
+        })
+
+  
+    </script>
+</body>
+</html>
