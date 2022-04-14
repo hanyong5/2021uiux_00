@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+html,body{height: 100%;}
 *{margin: 0;padding: 0;box-sizing: border-box;}
 li{list-style-type: none;}
 a:link,a:visited{text-decoration: none;color:#333}
@@ -90,3 +91,44 @@ a:link,a:visited{text-decoration: none;color:#333}
 #contents .gall li{float: left;width:calc( (100% - 20px) / 3);margin-right: 10px;}
 #contents .gall li:last-child{margin-right: 0;}
 
+#contents .cont2{position: relative;}
+#contents .cont2 a{display: block;}
+#contents .cont2 img{display: block;}
+#contents .cont2 h3{
+    position: absolute;left: 50%;top: 50%;transform:translate(-50%,-50%);
+    background: skyblue;padding: 10px 20px;
+}
+
+#contents .cont3{position: relative;}
+#contents .cont3 a{display: block;}
+#contents .cont3 img{display: block;}
+#contents .cont3 h3{
+    position: absolute;left: 50%;top: 50%;transform:translate(-50%,-50%);
+    background: skyblue;padding: 10px 20px;
+}
+
+.popView{
+    
+    width: 100%;height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;left: 0;top: 0;
+    z-index: 100;
+    /* display: flex;justify-content: center;align-items: center; */
+    display: none;
+}
+.popView .container{
+    width: 500px;height: 300px;
+    background: white;
+    padding:20px;
+    position: absolute;
+    left: 50%;top: 50%;
+    transform: translate(-50%,-50%);
+}
+.popView .container .close{
+    background: skyblue;
+    position: absolute;
+    padding:5px 15px;
+    cursor: pointer;
+    right: 20px;bottom: 20px;
+
+}

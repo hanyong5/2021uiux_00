@@ -65,3 +65,12 @@ $(".tab > div").click(function(e){
 
     $(".content > ul").hide().eq(i).fadeIn()
 })
+
+
+$(".popup").click(function(e){
+    e.preventDefault();
+    $(".popView").fadeIn()
+})
+$(".close").click(function(){
+    $(".popView").hide()
+})
