@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body{height: 500vh;background: #aaa;}
+        .wrap{
+            width: 100vw;height: 100vh;perspective: 1000px;
+            position: fixed;;
+        }
+        .stage{
+            width: 100vw;height: 100vh;
+            transform-style:preserve-3d;
+            /* transform: rotateX(10deg) rotateY(10deg) rotateZ(10deg) translateZ(10px); */
+        }
+        .house{
+            width: 100vw;height: 100vh;
+            transform-style: preserve-3d;
+            position: relative;
+            transform: translate3d(0,0,-500vw);
+        }
+        .wall{
+          width: 100vw;height: 100vh;
+          background: rgba(255,255,255,0.3);
+          position: absolute;
+          display: flex;justify-content: center;align-items: center;
+          font-size: 5em;
+        }
+        .wall.left,.wall.right{width: 1000vw;}
+        .wall.left{
+            transform: rotateY(90deg) translate3d(0,0,-500vw);
+        }
+        .wall.right{
+            transform: rotateY(90deg) translate3d(0,0,-400vw);
+        }
+
+        .wall.wall_1st{transform:translate3d(0,0,450vw)}
+        .wall.wall_2st{transform:translate3d(0,0,300vw)}
+        .wall.wall_3st{transform:translate3d(0,0,100vw)}
+        .wall.wall_4st{transform:translate3d(0,0,-100vw)}
+        .wall.wall_5st{transform:translate3d(0,0,-300vw)}
+        .wall.wall_6st{transform:translate3d(0,0,-500vw)}
+    </style>
+</head>
+<body>
+    <div class="wrap"><!-- perspective  / pof -->
+        <div class="stage"> <!-- transform-style / mouse pointer rotate -->
+            <div class="house"> <!-- transform-style  / scroll-->
+                <div class="wall left">left</div>
+                <div class="wall right">right</div>
+                <div class="wall wall_1st">view1</div><!-- 450 -->
+                <div class="wall wall_2st">view2</div><!-- 300 -->
+                <div class="wall wall_3st">view3</div><!-- 100 -->
+                <div class="wall wall_4st">view4</div><!-- -100 -->
+                <div class="wall wall_5st">view5</div><!-- -300 -->
+                <div class="wall wall_6st">view6</div><!-- -500 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
