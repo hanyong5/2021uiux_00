@@ -25,12 +25,12 @@
         }
         .wall{
           width: 100vw;height: 100vh;
-          background: rgba(255,255,255,0.3);
+          
           position: absolute;
           display: flex;justify-content: center;align-items: center;
           font-size: 5em;
         }
-        .wall.left,.wall.right{width: 1000vw;}
+        .wall.left,.wall.right{width: 1000vw;background: #2A0205}
         .wall.left{
             transform: rotateY(90deg) translate3d(0,0,-500vw);
         }
@@ -38,28 +38,53 @@
             transform: rotateY(90deg) translate3d(0,0,-400vw);
         }
 
-        .wall.wall_1st{transform:translate3d(0,0,450vw)}
-        .wall.wall_2st{transform:translate3d(0,0,300vw)}
-        .wall.wall_3st{transform:translate3d(0,0,100vw)}
-        .wall.wall_4st{transform:translate3d(0,0,-100vw)}
-        .wall.wall_5st{transform:translate3d(0,0,-300vw)}
-        .wall.wall_6st{transform:translate3d(0,0,-500vw)}
+        .wall.wall_1st{transform:translate3d(0,0,450vw);background-image: url(images/parallax7.png);}
+        .wall.wall_2st{transform:translate3d(0,0,300vw);background-image: url(images/parallax5.png);}
+        .wall.wall_3st{transform:translate3d(0,0,100vw);background-image: url(images/parallax3.png);}
+        .wall.wall_4st{transform:translate3d(0,0,-100vw);background-image: url(images/parallax4.png);}
+        .wall.wall_5st{transform:translate3d(0,0,-300vw);background-image: url(images/parallax1.png);}
+        .wall.wall_6st{transform:translate3d(0,0,-500vw);background-image: url(images/firewatch.jpg);}
+
+        .bImg{
+            background-position: center;background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bar{width: 100%;height: 10px;background: #fff;position: fixed;z-index: 1;}
+        .bar .container{height: 10px;background: red;}
     </style>
 </head>
 <body>
+    <div class="bar">
+        <div class="container"></div>
+    </div>
     <div class="wrap"><!-- perspective  / pof -->
         <div class="stage"> <!-- transform-style / mouse pointer rotate -->
             <div class="house"> <!-- transform-style  / scroll-->
                 <div class="wall left">left</div>
                 <div class="wall right">right</div>
-                <div class="wall wall_1st">view1</div><!-- 450 -->
-                <div class="wall wall_2st">view2</div><!-- 300 -->
-                <div class="wall wall_3st">view3</div><!-- 100 -->
-                <div class="wall wall_4st">view4</div><!-- -100 -->
-                <div class="wall wall_5st">view5</div><!-- -300 -->
-                <div class="wall wall_6st">view6</div><!-- -500 -->
+                <div class="wall wall_1st bImg">view1</div><!-- 450 -->
+                <div class="wall wall_2st bImg">view2</div><!-- 300 -->
+                <div class="wall wall_3st bImg">view3</div><!-- 100 -->
+                <div class="wall wall_4st bImg">view4</div><!-- -100 -->
+                <div class="wall wall_5st bImg">view5</div><!-- -300 -->
+                <div class="wall wall_6st bImg">view6</div><!-- -500 -->
             </div>
         </div>
     </div>
+
+    <script>
+        const houseElem = document.querySelector(".house");
+        const barElem = document.querySelector(".container");
+
+        
+        window.addEventListener("scroll",function(){
+            let maxScroll = document.body.offsetHeight - window.innerHeight;
+            let rate = window.pageYOffset / maxScroll;
+            let move = rate * 980 - 500;
+            console.log(move)
+            houseElem.style.transform = "translate3d(0,0,"+ move +"vw)";
+            barElem.style.width = rate * 100 + "%";
+        })
+    </script>
 </body>
 </html>
