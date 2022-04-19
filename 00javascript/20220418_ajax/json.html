@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="name">이름</div>
+    <script>
+        const view = {
+                "employees": [
+                    { "firstName": "John", "lastName": "Doe" },
+                    { "firstName": "Anna", "lastName": "Smith" },
+                    { "firstName": "Peter", "lastName": "Jones" },
+                    { "firstName": "Peter", "lastName": "Jones" },
+                    { "firstName": "Peter", "lastName": "Jones" },
+                    { "firstName": "Peter", "lastName": "Jones" },
+                    { "firstName": "Peter", "lastName": "Jones" },
+                    { "firstName": "Peter", "lastName": "Jones" },
+                ]
+            }
+
+        let nameElem = document.querySelector(".name");
+        //nameElem.innerHTML = view.employees[0].firstName +" "+ view.employees[0].lastName
+
+        let txt = "";
+        for(let i=0;i<view.employees.length;i++){
+            txt += "<div>"
+            txt += i+1 +". " + view.employees[i].firstName + " " + view.employees[i].lastName
+            txt += "</div>"
+        }
+
+        
+        nameElem.innerHTML = txt;
+    </script>
+</body>
+</html>

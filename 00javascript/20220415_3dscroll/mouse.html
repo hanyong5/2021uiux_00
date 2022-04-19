@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .wrap{
+            width: 100vw;height: 100vh;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+        .stage{
+            width: 100vw;height: 100vh;
+            background-image: url(images/firewatch.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;justify-content: center;align-items: center;
+            transform-style:preserve-3d;
+            position: relative;
+        }
+        .stage h1{
+            transform: translate3d(0,0,50px);font-size: 5em;
+            position: absolute;color:white
+        }
+        .stage h2{
+            position: absolute;font-size: 5em;
+            filter:blur(10px)
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="stage">
+            <h1>BRAVO MY LIFE</h1>
+            <h2>BRAVO MY LIFE</h2>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("mousemove",function(e){
+            // console.log("x값 : " + e.clientX + ", y값 : " + e.clientY)
+            console.log("x값 : "+ ( -1 + e.clientX / window.innerWidth * 2 ))
+
+            mousePosX = -1 + e.clientX / window.innerHeight * 2;
+            mousePosY = 1 - e.clientY / window.innerHeight * 2;
+            document.querySelector(".stage").style.transform = "rotateY(" + mousePosX*5 +"deg) rotateX(" + mousePosY*5 +"deg)"
+            // document.querySelector(".stage").style.transform = `rotateY(${mousePosX*10}deg)`
+
+        })
+    </script>
+</body>
+</html>

@@ -85,6 +85,18 @@
             houseElem.style.transform = "translate3d(0,0,"+ move +"vw)";
             barElem.style.width = rate * 100 + "%";
         })
+
+
+        window.addEventListener("mousemove",function(e){
+            // console.log("x값 : " + e.clientX + ", y값 : " + e.clientY)
+            console.log("x값 : "+ ( -1 + e.clientX / window.innerWidth * 2 ))
+
+            mousePosX = -1 + e.clientX / window.innerHeight * 2;
+            mousePosY = 1 - e.clientY / window.innerHeight * 2;
+            document.querySelector(".stage").style.transform = "rotateY(" + mousePosX*5 +"deg) rotateX(" + mousePosY*5 +"deg)"
+            // document.querySelector(".stage").style.transform = `rotateY(${mousePosX*10}deg)`
+
+        })
     </script>
 </body>
 </html>
